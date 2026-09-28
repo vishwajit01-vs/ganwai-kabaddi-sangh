@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Ganwai Kabaddi Sangh</title>
+
+    <link
+            rel="stylesheet"
+            href="css/style.css"
+    >
+
+    <link
+            rel="stylesheet"
+            href="css/admin.css"
+    >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     ADMIN HEADER
+===================================================== -->
+
+<header class="admin-top-header">
+
+    <div class="admin-top-container">
+
+        <div class="admin-logo-area">
+
+            <div class="admin-sangh-logo">
+
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+
+            </div>
+
+            <div class="admin-sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+            <span class="admin-panel-label">
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+    <section class="admin-section">
+
+        <div class="container">
+
+            <!-- =================================================
+                 ADMIN HEADER
+            ================================================= -->
+
+            <div class="admin-header">
+
+                <h2>
+                    Admin Dashboard
+                </h2>
+
+                <p>
+                    Manage memberships, team registrations,
+                    payments and tournaments from one place.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 MEMBERSHIP MANAGEMENT
+            ================================================= -->
+
+            <div class="admin-card">
+
+                <div class="admin-card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            MEMBERSHIP
+                        </span>
+
+                        <h2>
+                            Membership Management
+                        </h2>
+
+                        <p>
+                            Verify payments, approve memberships
+                            and manage annual renewals.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="membershipMessage"
+                        class="loading"
+                >
+                    Loading membership applications...
+                </div>
+
+
+                <div
+                        class="membership-table-wrapper"
+                        id="membershipTableWrapper"
+                        style="display: none;"
+                >
+
+                    <table class="membership-table">
+
+                        <thead>
+
+                        <tr>
+
+                            <th>
+                                Membership ID
+                            </th>
+
+                            <th>
+                                Year
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Mobile
+                            </th>
+
+                            <th>
+                                Initial Payment Ref.
+                            </th>
+
+                            <th>
+                                Payment Status
+                            </th>
+
+                            <th>
+                                Membership Status
+                            </th>
+
+                            <th>
+                                Renewal Payment Ref.
+                            </th>
+
+                            <th>
+                                Renewal Payment Status
+                            </th>
+
+                            <th>
+                                Renewal Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="membershipTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TEAM MANAGEMENT
+            ================================================= -->
+
+            <div class="admin-card">
+
+                <div class="admin-card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            TEAM REGISTRATION
+                        </span>
+
+                        <h2>
+                            Team Management
+                        </h2>
+
+                        <p>
+                            Verify team payments, review player
+                            registrations and approve teams.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="teamMessage"
+                        class="loading"
+                >
+                    Loading team registrations...
+                </div>
+
+
+                <div
+                        class="team-table-wrapper"
+                        id="teamTableWrapper"
+                        style="display: none;"
+                >
+
+                    <table class="team-table">
+
+                        <thead>
+
+                        <tr>
+
+                            <th>
+                                Registration ID
+                            </th>
+
+                            <th>
+                                Team Name
+                            </th>
+
+                            <th>
+                                Tournament
+                            </th>
+
+                            <th>
+                                Captain
+                            </th>
+
+                            <th>
+                                UTR / Payment Ref.
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Players
+                            </th>
+
+                            <th>
+                                Payment
+                            </th>
+
+                            <th>
+                                Registration
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="teamTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOURNAMENT MANAGEMENT
+            ================================================= -->
+
+            <div class="admin-card">
+
+                <div class="admin-card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            TOURNAMENT
+                        </span>
+
+                        <h2>
+                            Tournament Management
+                        </h2>
+
+                        <p>
+                            Create and manage Ganwai Kabaddi Sangh
+                            tournaments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     TOURNAMENT FORM
+                ================================================= -->
+
+                <form
+                        id="tournamentForm"
+                        class="tournament-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="tournamentName">
+
+                            Tournament Name
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="tournamentName"
+                                placeholder="Enter tournament name"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tournamentDate">
+
+                            Tournament Date
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="date"
+                                id="tournamentDate"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="venue">
+
+                            Venue
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="venue"
+                                placeholder="Enter venue name"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+
+                            Location
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="location"
+                                placeholder="Enter tournament location"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registrationStartDate">
+
+                            Registration Start Date
+
+                        </label>
+
+                        <input
+                                type="date"
+                                id="registrationStartDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registrationEndDate">
+
+                            Registration End Date
+
+                        </label>
+
+                        <input
+                                type="date"
+                                id="registrationEndDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="status">
+
+                            Tournament Status
+
+                        </label>
+
+                        <select id="status">
+
+                            <option value="Upcoming">
+                                Upcoming
+                            </option>
+
+                            <option value="Registration Open">
+                                Registration Open
+                            </option>
+
+                            <option value="Ongoing">
+                                Ongoing
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                            <option value="Cancelled">
+                                Cancelled
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="description">
+
+                            Tournament Description
+
+                        </label>
+
+                        <textarea
+                                id="description"
+                                placeholder="Enter tournament description"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <button
+                                type="submit"
+                                class="tournament-create-btn"
+                        >
+                            Create Tournament
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOURNAMENT LIST
+            ================================================= -->
+
+            <div class="admin-card">
+
+                <div class="admin-card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Existing Tournaments
+                        </h2>
+
+                        <p>
+                            View, edit or remove existing tournaments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                        id="tournamentMessage"
+                        class="loading"
+                >
+                    Loading tournaments...
+                </div>
+
+
+                <div
+                        id="tournamentList"
+                        class="tournament-list"
+                ></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 MATCH MANAGEMENT
+            ================================================= -->
+
+            <div class="admin-card">
+
+                <div class="admin-card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            MATCH MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Match Management
+                        </h2>
+
+                        <p>
+                            Create and manage matches for
+                            Ganwai Kabaddi Sangh tournaments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     MATCH FORM
+                ================================================= -->
+
+                <form
+                        id="matchForm"
+                        class="tournament-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="matchTournament">
+
+                            Tournament
+
+                            <span>*</span>
+
+                        </label>
+
+                        <select
+                                id="matchTournament"
+                                required
+                        >
+
+                            <option value="">
+                                Select Tournament
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matchType">
+
+                            Match Type
+
+                            <span>*</span>
+
+                        </label>
+
+                        <select
+                                id="matchType"
+                                required
+                        >
+
+                            <option value="League">
+                                League
+                            </option>
+
+                            <option value="Quarter Final">
+                                Quarter Final
+                            </option>
+
+                            <option value="Semi Final">
+                                Semi Final
+                            </option>
+
+                            <option value="Final">
+                                Final
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="teamA">
+
+                            Team A
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="teamA"
+                                placeholder="Enter Team A"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="teamB">
+
+                            Team B
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="teamB"
+                                placeholder="Enter Team B"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matchDate">
+
+                            Match Date & Time
+
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                                type="datetime-local"
+                                id="matchDate"
+                                required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matchVenue">
+
+                            Venue
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="matchVenue"
+                                placeholder="Enter match venue"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <button
+                                type="submit"
+                                class="tournament-create-btn"
+                        >
+                            Create Match
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- =================================================
+                     MATCH MESSAGE
+                ================================================= -->
+
+                <div
+                        id="matchMessage"
+                        class="loading"
+                >
+                </div>
+
+
+                <!-- =================================================
+                     MATCH LIST
+                ================================================= -->
+
+                <div
+                        id="matchList"
+                        class="tournament-list"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 Ganwai Kabaddi Sangh
+        </p>
+
+        <p>Digital Platform Developer: Vishwajit Chaubey</p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/script.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

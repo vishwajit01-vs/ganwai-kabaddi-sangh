@@ -1,0 +1,272 @@
+/* ================= MEMBERSHIP FORM PAGE ================= */
+
+.membership-form-section {
+    padding: 55px 0;
+    background: #ffffff;
+}
+
+.membership-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 32px;
+
+    background: #f4f8fc;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(11, 35, 65, 0.08);
+}
+
+
+/* ================= FORM GROUP ================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #0b2341;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ================= INPUTS ================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d8e1eb;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #0b2341;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f08a24;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ================= FORM ROW ================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* ================= FILE INPUT ================= */
+
+.form-group input[type="file"] {
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #718096;
+
+    font-size: 12px;
+}
+
+
+/* ================= SUBMIT ================= */
+
+.form-submit {
+    margin-top: 28px;
+
+    text-align: center;
+}
+
+.form-submit .btn {
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .membership-form-card {
+        padding: 26px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .membership-form-section {
+        padding: 42px 0;
+    }
+
+    .membership-form-card {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .membership-form-card {
+        padding: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+}
+
+/* ================= MEMBERSHIP PAYMENT ================= */
+
+.payment-section {
+    margin-top: 35px;
+}
+
+.payment-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-heading p {
+    margin: 0 0 6px;
+    color: #f08a24;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.payment-heading h3 {
+    margin: 0;
+    color: #0b2341;
+    font-size: 24px;
+}
+
+
+.payment-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+
+.payment-fee {
+    margin: 0;
+    color: #0b2341;
+    font-size: 18px;
+}
+
+.payment-fee strong {
+    color: #f08a24;
+    font-size: 24px;
+}
+
+
+.payment-type {
+    margin: 8px 0 20px;
+    color: #777777;
+    font-size: 13px;
+}
+
+
+.payment-qr {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.payment-qr img {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #eeeeee;
+}
+
+
+.payment-instruction {
+    margin: 15px 0 25px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* PAYMENT REFERENCE */
+
+.payment-card .form-group {
+    text-align: left;
+}
+
+.payment-card label {
+    display: block;
+    margin-bottom: 7px;
+    color: #0b2341;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.payment-card input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.payment-card input:focus {
+    border-color: #f08a24;
+}

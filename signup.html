@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Ganwai Kabaddi Sangh</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+            <h1>GANWAI KABADDI SANGH</h1>
+            <p>Established 2022</p>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="membership.html">Membership</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="#">Results</a>
+            <a href="rules.html">Rules</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+
+            <p class="hero-tag">ACCOUNT</p>
+
+            <h2>Create Your Account</h2>
+
+            <p class="hero-description">
+                Create your account to access the Ganwai Kabaddi Sangh platform.
+            </p>
+
+        </div>
+    </section>
+
+
+    <section class="signup-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p>ACCOUNT REGISTRATION</p>
+                <h2>Create Your Account</h2>
+            </div>
+
+            <div class="signup-card">
+
+                <form id="signupForm">
+
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input
+                                type="text"
+                                id="signupName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupMobile">Mobile Number</label>
+                        <input
+                                type="tel"
+                                id="signupMobile"
+                                name="mobile"
+                                placeholder="Enter 10-digit mobile number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input
+                                type="email"
+                                id="signupEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Create Password</label>
+                        <input
+                                type="password"
+                                id="signupPassword"
+                                name="password"
+                                placeholder="Create your password"
+                                required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                required>
+                    </div>
+
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            Create Account
+                        </button>
+                    </div>
+
+                </form>
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+        <p>© 2026 Ganwai Kabaddi Sangh</p>
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+
+</html>

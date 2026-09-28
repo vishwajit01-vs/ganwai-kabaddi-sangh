@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ganwai Kabaddi Sangh</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <div class="sangh-logo">
+
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+
+            </div>
+
+            <div class="sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="navbar">
+
+            <a
+                    href="index.html"
+                    class="active"
+            >
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="membership.html">
+                Membership
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+            <a href="rules.html">
+                Rules
+            </a>
+
+            <a href="contact-info.html">
+                Contact & Info
+            </a>
+
+            <a
+                    href="admin.html"
+                    id="adminLink"
+                    style="display: none;"
+            >
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- ==================================================
+             ACCOUNT ACTIONS
+        ================================================== -->
+
+        <div
+                class="account-actions"
+                id="accountActions"
+        >
+
+            <!-- Guest User -->
+
+            <div id="guestActions">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Signup
+                </a>
+
+            </div>
+
+
+            <!-- Logged-in User -->
+
+            <button
+                    type="button"
+                    id="userProfileButton"
+                    class="user-profile-button"
+                    style="display: none;"
+            >
+
+                <span class="user-icon">
+                    👤
+                </span>
+
+            </button>
+
+
+            <!-- Account Overlay -->
+
+            <div
+                    class="account-overlay"
+                    id="accountOverlay"
+            >
+            </div>
+
+
+            <!-- Account Sidebar -->
+
+            <aside
+                    class="account-sidebar"
+                    id="accountSidebar"
+            >
+
+                <div class="account-sidebar-header">
+
+                    <h2>
+                        My Account
+                    </h2>
+
+                    <button
+                            type="button"
+                            id="closeAccountSidebar"
+                            class="close-account-sidebar"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="account-profile-icon">
+                    👤
+                </div>
+
+
+                <h3 id="sidebarAccountName">
+                    User
+                </h3>
+
+                <p id="sidebarAccountEmail">
+                    —
+                </p>
+
+
+                <div class="account-details">
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="sidebarFullName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="sidebarMobile">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="sidebarEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-sidebar-actions">
+
+                    <button
+                            type="button"
+                            id="sidebarLogoutButton"
+                            class="sidebar-logout-button"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==================================================
+     MAIN CONTENT
+================================================== -->
+
+<main>
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-logo">
+
+                    <img
+                            src="images/logo.png"
+                            alt="Ganwai Kabaddi Sangh"
+                    >
+
+                </div>
+
+
+                <p class="hero-tag">
+                    GANWAI KABADDI SANGH • SINCE 2022
+                </p>
+
+
+                <h2>
+                    Promoting Kabaddi. Building Players. Building Teams.
+                </h2>
+
+
+                <p class="hero-slogan">
+                    नशे के विरुद्ध कबड्डी - कबड्डी
+                </p>
+
+
+                <p class="hero-description">
+                    Promoting Kabaddi, supporting players,
+                    building teams and organizing sporting events
+                    with a vision to strengthen the Kabaddi community.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                            href="membership-form.html"
+                            class="btn btn-primary"
+                    >
+                        Become a Member
+                    </a>
+
+                    <a
+                            href="team-registration.html"
+                            class="btn btn-secondary"
+                    >
+                        Register your Team
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         LIVE MATCH CENTER
+    ================================================== -->
+
+    <section class="live-match-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    MATCH CENTER
+                </p>
+
+                <h2>
+                    Live Match Score
+                </h2>
+
+            </div>
+
+
+            <div class="live-match-card">
+
+                <div class="live-match-header">
+
+                    <span
+                            class="match-status"
+                            id="homeMatchStatus"
+                    >
+                        MATCH CENTER
+                    </span>
+
+                </div>
+
+
+                <div class="live-match-content">
+
+
+                    <!-- TEAM A -->
+
+                    <div class="live-team">
+
+                        <span id="homeTeamA">
+                            —
+                        </span>
+
+                        <strong id="homeScoreA">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- LIVE SCORE -->
+
+                    <div class="live-score">
+
+                        <span>
+                            LIVE SCORE
+                        </span>
+
+                        <strong id="homeLiveScore">
+                            —
+                        </strong>
+
+                        <small id="homeMatchInfo">
+                            Checking live matches...
+                        </small>
+
+                    </div>
+
+
+                    <!-- TEAM B -->
+
+                    <div class="live-team">
+
+                        <span id="homeTeamB">
+                            —
+                        </span>
+
+                        <strong id="homeScoreB">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="live-match-footer">
+
+                    <span>
+                        🏟️ Ganwai Kabaddi Sangh
+                    </span>
+
+                    <span id="homeLiveVenue">
+                        Stay connected for live updates
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         UPCOMING TOURNAMENT
+    ================================================== -->
+
+    <section class="events-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    UPCOMING EVENT
+                </p>
+
+                <h2>
+                    Upcoming Tournament
+                </h2>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-card-top">
+
+                    <span
+                            class="event-badge"
+                            id="homeTournamentBadge"
+                    >
+                        UPCOMING
+                    </span>
+
+                    <span class="event-icon">
+                        🏆
+                    </span>
+
+                </div>
+
+
+                <div class="event-card-content">
+
+                    <h3 id="homeTournamentName">
+                        Loading tournament...
+                    </h3>
+
+
+                    <div class="event-details">
+
+
+                        <!-- DATE -->
+
+                        <div>
+
+                            <span>
+                                📅
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Date
+                                </strong>
+
+                                <span id="homeTournamentDate">
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- VENUE -->
+
+                        <div>
+
+                            <span>
+                                📍
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Venue
+                                </strong>
+
+                                <span id="homeTournamentVenue">
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- REGISTRATION -->
+
+                        <div>
+
+                            <span>
+                                👥
+                            </span>
+
+                            <p>
+
+                                <strong>
+                                    Registration
+                                </strong>
+
+                                <span id="homeTournamentRegistration">
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <a
+                            href="tournaments.html"
+                            class="btn btn-primary"
+                    >
+                        View Tournaments
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         LATEST RESULT
+    ================================================== -->
+
+    <section class="result-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    MATCH CENTER
+                </p>
+
+                <h2>
+                    Recent Match Result
+                </h2>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <div class="result-header">
+
+                    <span id="recentMatchTournament">
+                        Loading...
+                    </span>
+
+                    <span id="recentMatchDate">
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="result-content">
+
+
+                    <!-- TEAM A -->
+
+                    <div class="result-team">
+
+                        <span id="recentTeamA">
+                            —
+                        </span>
+
+                        <strong id="recentScoreA">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <!-- VS -->
+
+                    <div class="result-vs">
+
+                        <span id="recentMatchTypeBadge">
+                            MATCH
+                        </span>
+
+                        <strong>
+                            VS
+                        </strong>
+
+                    </div>
+
+
+                    <!-- TEAM B -->
+
+                    <div class="result-team">
+
+                        <span id="recentTeamB">
+                            —
+                        </span>
+
+                        <strong id="recentScoreB">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-details">
+
+                    <span id="recentMatchType">
+                        Match Type: —
+                    </span>
+
+                    <span id="recentMatchVenue">
+                        Venue: —
+                    </span>
+
+                </div>
+
+
+                <div
+                        id="recentMatchMessage"
+                        class="result-message"
+                >
+                    Match result will be updated here.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         SANGH HIGHLIGHTS
+    ================================================== -->
+
+    <section class="highlights-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    OUR PURPOSE
+                </p>
+
+                <h2>
+                    Building a Stronger Kabaddi Community
+                </h2>
+
+            </div>
+
+
+            <div class="highlight-grid">
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Promote Kabaddi
+                    </h3>
+
+                    <p>
+                        Encouraging Kabaddi and creating
+                        opportunities for players.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Support Players
+                    </h3>
+
+                    <p>
+                        Supporting athletes and helping
+                        them grow through organised events.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Build Teams
+                    </h3>
+
+                    <p>
+                        Connecting players and teams through
+                        structured Kabaddi tournaments.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Grow Together
+                    </h3>
+
+                    <p>
+                        Building a stronger and responsible
+                        Kabaddi community together.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         LATEST ANNOUNCEMENTS
+    ================================================== -->
+
+    <section class="announcement-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    STAY UPDATED
+                </p>
+
+                <h2>
+                    Latest Announcements
+                </h2>
+
+            </div>
+
+
+            <div class="announcement-list">
+
+
+                <!-- UPCOMING TOURNAMENT ANNOUNCEMENT -->
+
+                <a
+                        href="tournaments.html"
+                        class="announcement-card"
+                >
+
+                    <div class="announcement-date">
+
+                        <span id="announcementMonth">
+                            SEP
+                        </span>
+
+                        <strong id="announcementDay">
+                            24
+                        </strong>
+
+                    </div>
+
+
+                    <div class="announcement-content">
+
+                        <span class="announcement-tag">
+                            IMPORTANT
+                        </span>
+
+                        <h3>
+                            Upcoming Tournament Announcement
+                        </h3>
+
+                        <p>
+                            Details about the upcoming Kabaddi tournament
+                            will be announced here.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CONTACT / INFORMATION -->
+
+                <a
+                        href="contact-info.html"
+                        class="announcement-card"
+                >
+
+                    <div class="announcement-date">
+
+                        <span>
+                            INFO
+                        </span>
+
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3>
+                            Ganwai Kabaddi Sangh
+                        </h3>
+
+                        <p>
+                            Know about our Community Foundation, Social and be connected with us.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 Ganwai Kabaddi Sangh
+        </p>
+
+        <p>
+            Digital Platform Developer: Vishwajit Chaubey
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="js/script.js"></script>
+
+
+<!-- ==================================================
+     HOME TOURNAMENT DATA
+================================================== -->
+
+<script>
+
+    async function loadHomeTournament() {
+
+        const tournamentName =
+            document.getElementById(
+                "homeTournamentName"
+            );
+
+        const tournamentDate =
+            document.getElementById(
+                "homeTournamentDate"
+            );
+
+        const tournamentVenue =
+            document.getElementById(
+                "homeTournamentVenue"
+            );
+
+        const tournamentRegistration =
+            document.getElementById(
+                "homeTournamentRegistration"
+            );
+
+        const tournamentBadge =
+            document.getElementById(
+                "homeTournamentBadge"
+            );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/tournaments"
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Unable to load tournaments."
+                );
+
+            }
+
+
+            const result =
+                await response.json();
+
+
+            const tournaments =
+                Array.isArray(result)
+                    ? result
+                    : (
+                        Array.isArray(
+                            result.tournaments
+                        )
+                            ? result.tournaments
+                            : []
+                    );
+
+
+            // =================================================
+            // UPCOMING TOURNAMENTS
+            // =================================================
+
+            const eligibleTournaments =
+                tournaments.filter(
+                    tournament =>
+                        tournament.status === "Upcoming" ||
+                        tournament.status === "Registration Open"
+                );
+
+
+            // =================================================
+            // SORT BY TOURNAMENT DATE
+            // =================================================
+
+            eligibleTournaments.sort(
+                (a, b) =>
+                    new Date(a.tournamentDate) -
+                    new Date(b.tournamentDate)
+            );
+
+
+            const tournament =
+                eligibleTournaments[0];
+
+
+            // =================================================
+            // NO UPCOMING TOURNAMENT
+            // =================================================
+
+            if (!tournament) {
+
+                tournamentName.textContent =
+                    "No Upcoming Tournament";
+
+                tournamentDate.textContent =
+                    "To Be Announced";
+
+                tournamentVenue.textContent =
+                    "To Be Announced";
+
+                tournamentRegistration.textContent =
+                    "Stay Tuned";
+
+                tournamentBadge.textContent =
+                    "UPCOMING";
+
+                return;
+            }
+
+
+            // =================================================
+            // TOURNAMENT NAME
+            // =================================================
+
+            tournamentName.textContent =
+                tournament.tournamentName ||
+                "Upcoming Tournament";
+
+
+            // =================================================
+            // DATE
+            // =================================================
+
+            if (tournament.tournamentDate) {
+
+                const date =
+                    new Date(
+                        tournament.tournamentDate
+                    );
+
+                tournamentDate.textContent =
+                    date.toLocaleDateString(
+                        "en-IN",
+                        {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        }
+                    );
+
+            } else {
+
+                tournamentDate.textContent =
+                    "To Be Announced";
+
+            }
+
+
+            // =================================================
+            // VENUE
+            // =================================================
+
+            tournamentVenue.textContent =
+                tournament.venue ||
+                tournament.location ||
+                "To Be Announced";
+
+
+            // =================================================
+            // REGISTRATION STATUS
+            // =================================================
+
+            if (
+                tournament.status ===
+                "Registration Open"
+            ) {
+
+                tournamentRegistration.textContent =
+                    "Registration Open";
+
+                tournamentBadge.textContent =
+                    "REGISTRATION OPEN";
+
+            } else {
+
+                tournamentRegistration.textContent =
+                    "Coming Soon";
+
+                tournamentBadge.textContent =
+                    "UPCOMING";
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Home Tournament Error:",
+                error
+            );
+
+            tournamentName.textContent =
+                "Unable to Load Tournament";
+
+            tournamentDate.textContent =
+                "—";
+
+            tournamentVenue.textContent =
+                "—";
+
+            tournamentRegistration.textContent =
+                "—";
+
+            tournamentBadge.textContent =
+                "UPCOMING";
+
+        }
+
+    }
+
+
+    // =================================================
+    // LOAD HOME TOURNAMENT
+    // =================================================
+
+    loadHomeTournament();
+
+
+    // =================================================
+    // AUTO REFRESH EVERY 5 SECONDS
+    // =================================================
+
+    setInterval(
+        loadHomeTournament,
+        5000
+    );
+
+</script>
+
+
+<!-- ==================================================
+     AUTOMATIC ANNOUNCEMENT DATE
+================================================== -->
+
+<script>
+
+    function updateAnnouncementDate() {
+
+        const today =
+            new Date();
+
+
+        const month =
+            today
+                .toLocaleDateString(
+                    "en-IN",
+                    {
+                        month: "short"
+                    }
+                )
+                .toUpperCase();
+
+
+        const day =
+            today.getDate();
+
+
+        const monthElement =
+            document.getElementById(
+                "announcementMonth"
+            );
+
+
+        const dayElement =
+            document.getElementById(
+                "announcementDay"
+            );
+
+
+        if (monthElement) {
+
+            monthElement.textContent =
+                month;
+
+        }
+
+
+        if (dayElement) {
+
+            dayElement.textContent =
+                day;
+
+        }
+
+    }
+
+
+    // Load current date
+    updateAnnouncementDate();
+
+
+    // Check again every minute
+    // so the date updates automatically
+    // even if the page remains open overnight.
+
+    setInterval(
+        updateAnnouncementDate,
+        60000
+    );
+
+</script>
+
+
+<script src="js/live-match.js"></script>
+
+</body>
+
+</html>
+

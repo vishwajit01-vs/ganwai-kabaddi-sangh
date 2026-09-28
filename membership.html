@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Membership | Ganwai Kabaddi Sangh</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Membership Page CSS -->
+    <link rel="stylesheet" href="css/membership.css">
+
+    <style>
+        /* ================= RENEWAL SECTION ================= */
+
+        .renewal-section {
+            margin-top: 40px;
+        }
+
+        .renewal-card {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e5e9f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .renewal-card h3 {
+            color: #16213e;
+            margin-bottom: 10px;
+        }
+
+        .renewal-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .renewal-fee {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f28c28;
+            margin: 15px 0;
+        }
+
+        .renewal-qr {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .renewal-qr img {
+            width: 180px;
+            max-width: 100%;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .renewal-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d8dee8;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        .renewal-input:focus {
+            border-color: #f28c28;
+            box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.12);
+        }
+
+        .renewal-btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .renewal-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f7f9fc;
+            color: #16213e;
+            line-height: 1.6;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .renewal-card {
+                padding: 20px;
+            }
+
+            .renewal-fee {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <div class="sangh-logo">
+
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+
+            </div>
+
+            <div class="sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="navbar">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                    href="membership.html"
+                    class="active"
+            >
+                Membership
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+            <a href="rules.html">
+                Rules
+            </a>
+
+            <a href="contact-info.html">
+                Contact & Info
+            </a>
+
+            <a
+                    href="admin.html"
+                    id="adminLink"
+                    style="display: none;"
+            >
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- ================= ACCOUNT ACTIONS ================= -->
+
+        <div
+                class="account-actions"
+                id="accountActions"
+        >
+
+            <!-- Guest User -->
+
+            <div id="guestActions">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Signup
+                </a>
+
+            </div>
+
+
+            <!-- Logged-in User -->
+
+            <button
+                    type="button"
+                    id="userProfileButton"
+                    class="user-profile-button"
+                    style="display: none;"
+            >
+
+                <span class="user-icon">
+                    👤
+                </span>
+
+            </button>
+
+
+            <!-- ================= ACCOUNT OVERLAY ================= -->
+
+            <div
+                    class="account-overlay"
+                    id="accountOverlay"
+            >
+            </div>
+
+
+            <!-- ================= ACCOUNT SIDEBAR ================= -->
+
+            <aside
+                    class="account-sidebar"
+                    id="accountSidebar"
+            >
+
+                <div class="account-sidebar-header">
+
+                    <h2>
+                        My Account
+                    </h2>
+
+                    <button
+                            type="button"
+                            id="closeAccountSidebar"
+                            class="close-account-sidebar"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="account-profile">
+
+                    <div class="account-profile-icon">
+                        👤
+                    </div>
+
+                    <h3 id="sidebarAccountName">
+                        User
+                    </h3>
+
+                    <p id="sidebarAccountEmail">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div class="account-details">
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="sidebarFullName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="sidebarMobile">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="sidebarEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-sidebar-actions">
+
+                    <button
+                            type="button"
+                            id="sidebarLogoutButton"
+                            class="sidebar-logout-button"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    <!-- Membership Hero -->
+
+    <section class="membership-hero">
+
+        <div class="container">
+
+            <p class="hero-tag">
+                GANWAI KABADDI SANGH • MEMBERSHIP
+            </p>
+
+            <h2>
+                Become a Member
+            </h2>
+
+            <p>
+                Join Ganwai Kabaddi Sangh and become a part
+                of our growing Kabaddi community.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MEMBERSHIP INFORMATION ================= -->
+
+    <section class="membership-section">
+
+        <div class="container">
+
+            <!-- Intro -->
+
+            <div class="membership-intro">
+
+                <p>
+                    Membership connects players, teams and
+                    Kabaddi supporters with Ganwai Kabaddi Sangh.
+                </p>
+
+            </div>
+
+
+            <!-- ================= MEMBERSHIP PLAN ================= -->
+
+            <div class="membership-plan">
+
+                <div class="plan-header">
+
+                    <h3>
+                        Annual Membership
+                    </h3>
+
+                    <p>
+                        Membership is valid for one year.
+                    </p>
+
+                </div>
+
+
+                <div class="plan-details">
+
+                    <div class="plan-item">
+
+                        <span>📅</span>
+
+                        <p>
+
+                            <strong>
+                                Validity
+                            </strong>
+
+                            <span>
+                                1 Year
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="plan-item">
+
+                        <span>💰</span>
+
+                        <p>
+
+                            <strong>
+                                Initial Membership
+                            </strong>
+
+                            <span>
+                                ₹100
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="plan-item">
+
+                        <span>🔄</span>
+
+                        <p>
+
+                            <strong>
+                                Annual Renewal
+                            </strong>
+
+                            <span>
+                                ₹50 / Year
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="plan-action">
+
+                    <a
+                            href="membership-form.html"
+                            class="btn btn-primary"
+                    >
+                        Join Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MY MEMBERSHIP ================= -->
+
+            <div class="my-membership">
+
+                <div class="section-heading">
+
+                    <p>
+                        MEMBER AREA
+                    </p>
+
+                    <h2>
+                        My Membership
+                    </h2>
+
+                </div>
+
+
+                <div
+                        id="membershipStatus"
+                        class="membership-status"
+                >
+
+                    <p>
+                        Checking your membership...
+                    </p>
+
+                </div>
+
+
+                <!-- ================= RENEWAL ================= -->
+
+                <div
+                        id="renewalSection"
+                        class="renewal-section"
+                        style="display: none;"
+                >
+
+                    <div class="section-heading">
+
+                        <p>
+                            MEMBERSHIP RENEWAL
+                        </p>
+
+                        <h2>
+                            Renew Your Membership
+                        </h2>
+
+                    </div>
+
+
+                    <div class="renewal-card">
+
+                        <h3>
+                            Annual Renewal
+                        </h3>
+
+                        <p>
+                            Renew your existing membership
+                            for the next year.
+                        </p>
+
+
+                        <div class="renewal-fee">
+                            ₹50
+                        </div>
+
+
+                        <p>
+
+                            <strong>
+                                Current Membership ID:
+                            </strong>
+
+                            <span id="renewalMembershipId">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <!-- QR -->
+
+                        <div class="renewal-qr">
+
+                            <p>
+                                Scan & Pay ₹50 using PhonePe
+                            </p>
+
+                            <img
+                                    src="images/phonepe-qr.jpeg"
+                                    alt="PhonePe Payment QR"
+                            >
+
+                        </div>
+
+
+                        <!-- Payment Reference -->
+
+                        <label for="renewalReference">
+                            Payment Reference / UTR
+                        </label>
+
+                        <input
+                                type="text"
+                                id="renewalReference"
+                                class="renewal-input"
+                                placeholder="Enter payment reference / UTR"
+                        >
+
+
+                        <button
+                                type="button"
+                                id="renewMembershipBtn"
+                                class="btn btn-primary renewal-btn"
+                        >
+                            Submit Renewal
+                        </button>
+
+
+                        <div
+                                id="renewalMessage"
+                                class="renewal-status"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 Ganwai Kabaddi Sangh. All Rights Reserved.
+        </p>
+
+        <p>
+            Digital Platform Developer: Vishwajit Chaubey
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= COMMON JS ================= -->
+
+<script src="js/script.js"></script>
+
+
+<!-- ================= MEMBERSHIP JS ================= -->
+
+<script>
+
+    /* ==========================================
+       MEMBERSHIP DATA
+    ========================================== */
+
+    const membershipStatus =
+        document.getElementById("membershipStatus");
+
+    const renewalSection =
+        document.getElementById("renewalSection");
+
+    const renewalMembershipId =
+        document.getElementById("renewalMembershipId");
+
+    const renewalReference =
+        document.getElementById("renewalReference");
+
+    const renewMembershipBtn =
+        document.getElementById("renewMembershipBtn");
+
+    const renewalMessage =
+        document.getElementById("renewalMessage");
+
+
+    /* =================================================
+       IMPORTANT:
+       script.js already has authToken.
+       So we use a different variable name here.
+    ================================================= */
+
+    const membershipAuthToken =
+        localStorage.getItem("authToken");
+
+
+    function showMessage(message) {
+
+        membershipStatus.innerHTML =
+            `<p>${message}</p>`;
+
+    }
+
+
+    function formatMembershipDate(date) {
+
+        if (!date) {
+            return "-";
+        }
+
+        const parsedDate =
+            new Date(date);
+
+        if (isNaN(parsedDate.getTime())) {
+            return "-";
+        }
+
+        return parsedDate.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       LOAD MY MEMBERSHIP
+    ========================================== */
+
+    async function loadMembership() {
+
+        if (!membershipAuthToken) {
+
+            showMessage(
+                "Please login to view your membership."
+            );
+
+            renewalSection.style.display = "none";
+
+            return;
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/membership/my-membership",
+                    {
+                        method: "GET",
+
+                        headers: {
+                            "Authorization":
+                                `Bearer ${membershipAuthToken}`
+                        }
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                showMessage(
+                    data.message ||
+                    "Unable to load membership."
+                );
+
+                renewalSection.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            const membership =
+                data.membership || data;
+
+
+            membershipStatus.innerHTML = `
+
+                <div class="membership-info">
+
+                    <p>
+                        <strong>Status:</strong>
+                        ${membership.membershipStatus || "-"}
+                    </p>
+
+                    <p>
+                        <strong>Membership ID:</strong>
+                        ${membership.membershipId || "-"}
+                    </p>
+
+                    <p>
+                        <strong>Name:</strong>
+                        ${membership.fullName || "-"}
+                    </p>
+
+                    <p>
+                        <strong>Type:</strong>
+                        ${membership.membershipValidity || "Annual"}
+                    </p>
+
+                    <p>
+                        <strong>Member Number:</strong>
+                        ${membership.memberNumber || "-"}
+                    </p>
+
+                    <p>
+                        <strong>Membership Year:</strong>
+                        ${membership.membershipYear || "-"}
+                    </p>
+
+                    <p>
+                        <strong>Valid From:</strong>
+                        ${formatMembershipDate(
+                membership.lastRenewalDate
+            )}
+                    </p>
+
+                    <p>
+                        <strong>Next Renewal:</strong>
+                        ${formatMembershipDate(
+                membership.nextRenewalDate
+            )}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            /* ================================
+               RENEWAL CHECK
+            ================================= */
+
+            if (
+                membership.renewalStatus === "Due"
+            ) {
+
+                renewalSection.style.display =
+                    "block";
+
+                renewalMembershipId.textContent =
+                    membership.membershipId || "-";
+
+            } else {
+
+                renewalSection.style.display =
+                    "none";
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Load Membership Error:",
+                error
+            );
+
+            showMessage(
+                "Unable to connect to the membership server."
+            );
+
+            renewalSection.style.display =
+                "none";
+        }
+
+    }
+
+
+    /* ==========================================
+       RENEW MEMBERSHIP
+    ========================================== */
+
+    renewMembershipBtn.addEventListener(
+        "click",
+        async function () {
+
+            const reference =
+                renewalReference.value.trim();
+
+
+            if (!reference) {
+
+                renewalMessage.textContent =
+                    "Please enter your payment reference / UTR.";
+
+                return;
+            }
+
+
+            const utrPattern =
+                /^\d{12}$/;
+
+
+            if (!utrPattern.test(reference)) {
+
+                renewalMessage.textContent =
+                    "UTR must contain exactly 12 digits.";
+
+                return;
+            }
+
+
+            if (!membershipAuthToken) {
+
+                renewalMessage.textContent =
+                    "Please login before submitting renewal.";
+
+                return;
+            }
+
+
+            renewMembershipBtn.disabled =
+                true;
+
+            renewalMessage.textContent =
+                "Submitting renewal...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/membership/renew",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Authorization":
+                                    `Bearer ${membershipAuthToken}`
+                            },
+
+                            body: JSON.stringify({
+
+                                renewalPaymentReference:
+                                reference
+
+                            })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    renewalMessage.textContent =
+                        data.message ||
+                        "Renewal submission failed.";
+
+                    renewMembershipBtn.disabled =
+                        false;
+
+                    return;
+                }
+
+
+                renewalMessage.textContent =
+                    data.message ||
+                    "Renewal submitted successfully.";
+
+                renewalReference.value = "";
+
+                renewMembershipBtn.disabled =
+                    false;
+
+
+                await loadMembership();
+
+            } catch (error) {
+
+                console.error(
+                    "Renewal Error:",
+                    error
+                );
+
+                renewalMessage.textContent =
+                    "Unable to connect to the server.";
+
+                renewMembershipBtn.disabled =
+                    false;
+
+            }
+
+        }
+    );
+
+
+    /* ==========================================
+       START
+    ========================================== */
+
+    loadMembership();
+
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,861 @@
+/* =====================================================
+   GANWAI KABADDI SANGH
+   RESULTS PAGE — RESPONSIVE
+   Theme: Navy Blue + Orange
+===================================================== */
+
+
+/* =====================================================
+   BASE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f7fa;
+
+    color: #172033;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.results-hero {
+    padding: 62px 0;
+
+    background:
+            linear-gradient(
+                    rgba(7, 26, 51, 0.94),
+                    rgba(7, 26, 51, 0.94)
+            );
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.hero-label {
+    margin-bottom: 10px;
+
+    color: #ff8a00;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    line-height: 1.4;
+}
+
+.results-hero h1 {
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+    font-size: 44px;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+.results-hero p:last-child {
+    width: min(100%, 650px);
+
+    margin: 0 auto;
+
+    color: #dce4ef;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   RESULTS SECTION
+===================================================== */
+
+.results-section {
+    padding: 58px 0;
+
+    background: #f5f7fa;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+    margin-bottom: 32px;
+
+    text-align: center;
+}
+
+.section-heading p {
+    margin-bottom: 8px;
+
+    color: #ff8a00;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    line-height: 1.4;
+}
+
+.section-heading h2 {
+    color: #071a33;
+
+    font-size: 30px;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   LOADING / MESSAGE
+===================================================== */
+
+.results-message {
+    width: 100%;
+
+    padding: 30px 20px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   RESULTS LIST
+===================================================== */
+
+.results-list {
+    display: grid;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   RESULT CARD
+===================================================== */
+
+.result-card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf0;
+
+    border-radius: 15px;
+
+    box-shadow:
+            0 8px 25px rgba(7, 26, 51, 0.07);
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 12px 30px rgba(7, 26, 51, 0.12);
+}
+
+
+/* =====================================================
+   RESULT HEADER
+===================================================== */
+
+.result-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.tournament-name {
+    min-width: 0;
+
+    color: #071a33;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.completed-badge {
+    flex-shrink: 0;
+
+    padding: 6px 11px;
+
+    background: #e8f7ee;
+
+    color: #16834a;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   MATCH TYPE
+===================================================== */
+
+.match-type {
+    margin-bottom: 16px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   TEAMS & SCORE
+===================================================== */
+
+.result-scoreboard {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+.result-team {
+    min-width: 0;
+
+    color: #172033;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.result-team.team-b {
+    text-align: right;
+}
+
+.result-score {
+    min-width: 105px;
+
+    padding: 12px 16px;
+
+    background: #071a33;
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+.result-vs {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #b8c3d1;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+}
+
+
+/* =====================================================
+   MATCH DETAILS
+===================================================== */
+
+.result-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+.result-detail {
+    min-width: 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.result-detail strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #172033;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   WINNER
+===================================================== */
+
+.result-winner {
+    margin-top: 17px;
+
+    padding: 11px 14px;
+
+    background: #fff4e8;
+
+    color: #c45d00;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+    padding: 23px 0;
+
+    background: #071a33;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .results-hero {
+        padding: 50px 0;
+    }
+
+    .results-hero h1 {
+        font-size: 36px;
+    }
+
+    .results-section {
+        padding: 48px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 27px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    /*
+       KEEP MATCH HORIZONTAL
+    */
+
+    .result-scoreboard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            100px
+            minmax(0, 1fr);
+
+        gap: 10px;
+
+        align-items: center;
+    }
+
+    .result-team {
+        font-size: 17px;
+    }
+
+    .result-team,
+    .result-team.team-b {
+        text-align: center;
+    }
+
+    .result-score {
+        margin: 0;
+
+        min-width: 100px;
+    }
+
+    .result-details {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .results-hero {
+        padding: 40px 0;
+    }
+
+    .hero-label {
+        font-size: 11px;
+    }
+
+    .results-hero h1 {
+        margin-bottom: 10px;
+
+        font-size: 30px;
+    }
+
+    .results-hero p:last-child {
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+    .results-section {
+        padding: 38px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 23px;
+    }
+
+    .section-heading p {
+        font-size: 11px;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .results-list {
+        gap: 14px;
+    }
+
+    .result-card {
+        padding: 17px;
+
+        border-radius: 13px;
+    }
+
+    .result-card-header {
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .tournament-name {
+        width: auto;
+
+        flex: 1 1 auto;
+
+        font-size: 16px;
+    }
+
+    .completed-badge {
+        font-size: 10px;
+    }
+
+    .match-type {
+        margin-bottom: 14px;
+
+        font-size: 12px;
+    }
+
+
+    /* ==============================================
+       MOBILE MATCH — HORIZONTAL
+    ============================================== */
+
+    .result-scoreboard {
+        width: 100%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            82px
+            minmax(0, 1fr);
+
+        gap: 6px;
+
+        align-items: center;
+    }
+
+    .result-team,
+    .result-team.team-b {
+        min-width: 0;
+
+        text-align: center;
+
+        font-size: 15px;
+
+        line-height: 1.25;
+
+        overflow-wrap: anywhere;
+    }
+
+    .result-score {
+        min-width: 82px;
+
+        padding: 9px 7px;
+
+        font-size: 19px;
+
+        border-radius: 8px;
+    }
+
+    .result-vs {
+        font-size: 8px;
+
+        margin-top: 2px;
+    }
+
+
+    /* ==============================================
+       MOBILE MATCH DETAILS — HORIZONTAL
+    ============================================== */
+
+    .result-details {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+
+        margin-top: 16px;
+
+        padding-top: 13px;
+    }
+
+    .result-detail {
+        text-align: center;
+
+        font-size: 10px;
+
+        line-height: 1.35;
+    }
+
+    .result-detail strong {
+        margin-top: 3px;
+
+        font-size: 11px;
+
+        line-height: 1.3;
+    }
+
+    .result-winner {
+        margin-top: 14px;
+
+        padding: 9px 10px;
+
+        font-size: 11px;
+
+        text-align: center;
+    }
+
+    .results-message {
+        padding: 25px 15px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .results-hero {
+        padding: 34px 0;
+    }
+
+    .results-hero h1 {
+        font-size: 27px;
+    }
+
+    .results-hero p:last-child {
+        font-size: 12px;
+    }
+
+    .results-section {
+        padding: 32px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .result-card {
+        padding: 15px;
+    }
+
+    .tournament-name {
+        font-size: 14px;
+    }
+
+    .completed-badge {
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+
+    /* HORIZONTAL MATCH */
+
+    .result-scoreboard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            76px
+            minmax(0, 1fr);
+
+        gap: 4px;
+    }
+
+    .result-team,
+    .result-team.team-b {
+        font-size: 14px;
+    }
+
+    .result-score {
+        min-width: 76px;
+
+        padding: 8px 5px;
+
+        font-size: 18px;
+    }
+
+    .result-vs {
+        font-size: 7px;
+    }
+
+
+    /* HORIZONTAL DETAILS */
+
+    .result-details {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 4px;
+    }
+
+    .result-detail {
+        font-size: 9px;
+    }
+
+    .result-detail strong {
+        font-size: 10px;
+    }
+
+    .result-winner {
+        font-size: 10.5px;
+    }
+
+    .site-footer {
+        padding: 20px 0;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 320px) {
+
+    .results-hero {
+        padding: 30px 0;
+    }
+
+    .results-hero h1 {
+        font-size: 25px;
+    }
+
+    .results-section {
+        padding: 28px 0;
+    }
+
+    .result-card {
+        padding: 13px;
+    }
+
+
+    /* KEEP HORIZONTAL EVEN ON VERY SMALL PHONE */
+
+    .result-scoreboard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            68px
+            minmax(0, 1fr);
+
+        gap: 3px;
+    }
+
+    .result-team,
+    .result-team.team-b {
+        font-size: 12px;
+
+        line-height: 1.2;
+    }
+
+    .result-score {
+        min-width: 68px;
+
+        padding: 7px 4px;
+
+        font-size: 16px;
+    }
+
+    .result-vs {
+        font-size: 7px;
+    }
+
+
+    /* DETAILS ALSO HORIZONTAL */
+
+    .result-details {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 3px;
+    }
+
+    .result-detail {
+        font-size: 8px;
+
+        line-height: 1.25;
+    }
+
+    .result-detail strong {
+        font-size: 9px;
+    }
+
+    .result-winner {
+        font-size: 10px;
+
+        padding: 8px;
+    }
+}

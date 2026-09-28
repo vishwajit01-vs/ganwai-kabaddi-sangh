@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Match Results | Ganwai Kabaddi Sangh
+    </title>
+
+
+    <!-- ================= COMMON CSS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="css/style.css"
+    >
+
+
+    <!-- ================= RESULTS PAGE CSS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="css/results.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <div class="sangh-logo">
+
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+
+            </div>
+
+            <div class="sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="navbar">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="membership.html">
+                Membership
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a
+                    href="results.html"
+                    class="active"
+            >
+                Results
+            </a>
+
+            <a href="rules.html">
+                Rules
+            </a>
+
+            <a href="contact-info.html">
+                Contact & Info
+            </a>
+
+            <a
+                    href="admin.html"
+                    id="adminLink"
+                    style="display: none;"
+            >
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- ================= ACCOUNT ACTIONS ================= -->
+
+        <div
+                class="account-actions"
+                id="accountActions"
+        >
+
+            <!-- Guest User -->
+
+            <div id="guestActions">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Signup
+                </a>
+
+            </div>
+
+
+            <!-- Logged-in User -->
+
+            <button
+                    type="button"
+                    id="userProfileButton"
+                    class="user-profile-button"
+                    style="display: none;"
+            >
+
+                <span class="user-icon">
+                    👤
+                </span>
+
+            </button>
+
+
+            <!-- ================= ACCOUNT OVERLAY ================= -->
+
+            <div
+                    class="account-overlay"
+                    id="accountOverlay"
+            >
+            </div>
+
+
+            <!-- ================= ACCOUNT SIDEBAR ================= -->
+
+            <aside
+                    class="account-sidebar"
+                    id="accountSidebar"
+            >
+
+                <div class="account-sidebar-header">
+
+                    <h2>
+                        My Account
+                    </h2>
+
+                    <button
+                            type="button"
+                            id="closeAccountSidebar"
+                            class="close-account-sidebar"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="account-profile">
+
+                    <div class="account-profile-icon">
+                        👤
+                    </div>
+
+                    <h3 id="sidebarAccountName">
+                        User
+                    </h3>
+
+                    <p id="sidebarAccountEmail">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div class="account-details">
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="sidebarFullName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="sidebarMobile">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="sidebarEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-sidebar-actions">
+
+                    <button
+                            type="button"
+                            id="sidebarLogoutButton"
+                            class="sidebar-logout-button"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     RESULTS HERO
+========================================== -->
+
+<section class="results-hero">
+
+    <div class="container">
+
+        <p class="hero-label">
+            MATCH HISTORY
+        </p>
+
+        <h1>
+            Match Results
+        </h1>
+
+        <p>
+            View completed matches and official results
+            of Ganwai Kabaddi Sangh.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     RESULTS SECTION
+========================================== -->
+
+<main>
+
+    <section class="results-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>
+                    OFFICIAL RESULTS
+                </p>
+
+                <h2>
+                    Completed Matches
+                </h2>
+
+            </div>
+
+
+            <!-- ================= LOADING ================= -->
+
+            <div
+                    id="resultsLoading"
+                    class="results-message"
+            >
+                Loading match results...
+            </div>
+
+
+            <!-- ================= RESULTS ================= -->
+
+            <div
+                    id="resultsList"
+                    class="results-list"
+            >
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 Ganwai Kabaddi Sangh.
+            All rights reserved.
+        </p>
+
+        <p>Digital Platform Developer: Vishwajit Chaubey</p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= COMMON JS ================= -->
+
+<script src="js/script.js"></script>
+
+
+<!-- ================= RESULTS JS ================= -->
+
+<script src="js/results.js"></script>
+
+
+</body>
+
+</html>

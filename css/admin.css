@@ -1,0 +1,1965 @@
+/* =====================================================
+   ADMIN DASHBOARD
+   GANWAI KABADDI SANGH
+   PROFESSIONAL ADMIN PANEL
+===================================================== */
+
+
+/* =====================================================
+   ADMIN TOP HEADER
+===================================================== */
+
+.admin-top-header {
+    width: 100%;
+
+    background: #0b2341;
+
+    border-bottom: 3px solid #f08a24;
+
+    box-shadow:
+            0 5px 18px rgba(11, 35, 65, 0.15);
+
+    position: relative;
+
+    z-index: 100;
+}
+
+
+/* =====================================================
+   ADMIN HEADER CONTAINER
+===================================================== */
+
+.admin-top-container {
+    max-width: 1200px;
+
+    min-height: 105px;
+
+    margin: 0 auto;
+
+    padding: 14px 24px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   LOGO + TITLE AREA
+===================================================== */
+
+.admin-logo-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   SANGH LOGO
+===================================================== */
+
+.admin-sangh-logo {
+    width: 76px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   LOGO IMAGE
+===================================================== */
+
+.admin-sangh-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    clip-path: circle(50% at 50% 50%);
+}
+
+
+/* =====================================================
+   SANGH TITLE
+===================================================== */
+
+.admin-sangh-title h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    line-height: 1.1;
+}
+
+
+.admin-sangh-title p {
+    margin: 7px 0 0;
+
+    color: #f08a24;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ADMIN PANEL LABEL
+===================================================== */
+
+.admin-header-right {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.admin-panel-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 16px;
+
+    background: rgba(240, 138, 36, 0.10);
+
+    border: 1px solid rgba(240, 138, 36, 0.55);
+
+    border-radius: 22px;
+
+    color: #f08a24;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ADMIN SECTION
+===================================================== */
+
+.admin-section {
+    padding: 45px 0 70px;
+
+    background: #f4f7fb;
+
+    min-height: calc(100vh - 105px);
+}
+
+
+/* =====================================================
+   ADMIN CONTENT HEADER
+===================================================== */
+
+.admin-header {
+    max-width: 1100px;
+
+    margin: 0 auto 30px;
+
+    padding: 28px 30px;
+
+    background: #0b2341;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    box-shadow:
+            0 10px 28px rgba(11, 35, 65, 0.12);
+}
+
+
+.admin-header h2 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+.admin-header p {
+    margin: 0;
+
+    color: #cbd7e5;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   ADMIN CARD
+===================================================== */
+
+.admin-card {
+    max-width: 1100px;
+
+    margin: 0 auto 24px;
+
+    padding: 27px 29px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e9f1;
+
+    border-radius: 14px;
+
+    box-shadow:
+            0 7px 24px rgba(11, 35, 65, 0.06);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.admin-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #f08a24;
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.admin-card-heading {
+    margin-bottom: 22px;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #f08a24;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.admin-card-heading h2 {
+    margin: 0 0 6px;
+
+    color: #0b2341;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.admin-card-heading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+    padding: 16px 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e1e8f0;
+
+    border-radius: 9px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   MEMBERSHIP & TEAM TABLE WRAPPER
+===================================================== */
+
+.membership-table-wrapper,
+.team-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e7ef;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.membership-table,
+.team-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.membership-table th,
+.team-table th {
+    padding: 13px 14px;
+
+    background: #0b2341;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 2px solid #f08a24;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.membership-table td,
+.team-table td {
+    padding: 13px 14px;
+
+    background: #ffffff;
+
+    color: #53657d;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+
+.membership-table tbody tr:last-child td,
+.team-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.membership-table tbody tr:hover td,
+.team-table tbody tr:hover td {
+    background: #fffaf5;
+}
+
+
+/* =====================================================
+   TABLE BUTTONS
+===================================================== */
+
+.membership-table button,
+.team-table button {
+    margin: 2px;
+
+    padding: 7px 11px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #0b2341;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.membership-table button:hover,
+.team-table button:hover {
+    background: #f08a24;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TOURNAMENT FORM
+===================================================== */
+
+.tournament-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group label {
+    margin-bottom: 7px;
+
+    color: #0b2341;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.form-group label span {
+    color: #f08a24;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ccd7e3;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #0b2341;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.form-group textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #f08a24;
+
+    box-shadow:
+            0 0 0 3px rgba(240, 138, 36, 0.10);
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   FULL WIDTH FORM
+===================================================== */
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   CREATE TOURNAMENT BUTTON
+===================================================== */
+
+.tournament-create-btn {
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f08a24;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.tournament-create-btn:hover {
+    background: #d97415;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+            0 6px 15px rgba(240, 138, 36, 0.22);
+}
+
+
+/* =====================================================
+   TOURNAMENT LIST
+===================================================== */
+
+.tournament-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   TOURNAMENT ITEM
+===================================================== */
+
+.tournament-item {
+    padding: 19px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8f0;
+
+    border-left: 4px solid #f08a24;
+
+    border-radius: 10px;
+
+    box-shadow:
+            0 4px 14px rgba(11, 35, 65, 0.05);
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.tournament-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 8px 20px rgba(11, 35, 65, 0.08);
+}
+
+
+.tournament-item h3 {
+    margin: 0 0 9px;
+
+    color: #0b2341;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.tournament-item p {
+    margin: 5px 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   TOURNAMENT STATUS
+===================================================== */
+
+.tournament-status {
+    display: inline-block;
+
+    margin: 7px 0;
+
+    padding: 6px 10px;
+
+    background: #fff1e4;
+
+    color: #d97415;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   TOURNAMENT ACTIONS
+===================================================== */
+
+.tournament-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+
+.tournament-actions button {
+    padding: 7px 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #0b2341;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.tournament-actions button:hover {
+    background: #f08a24;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   ADMIN CARD SPACING
+===================================================== */
+
+.admin-card + .admin-card {
+    margin-top: 24px;
+}
+
+
+/* =====================================================
+   TABLE SCROLLBAR
+===================================================== */
+
+.membership-table-wrapper::-webkit-scrollbar,
+.team-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+
+.membership-table-wrapper::-webkit-scrollbar-track,
+.team-table-wrapper::-webkit-scrollbar-track {
+    background: #eef2f6;
+}
+
+
+.membership-table-wrapper::-webkit-scrollbar-thumb,
+.team-table-wrapper::-webkit-scrollbar-thumb {
+    background: #b9c5d2;
+
+    border-radius: 10px;
+}
+
+
+.membership-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #f08a24;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .admin-top-container {
+        min-height: 92px;
+
+        padding: 13px 20px;
+    }
+
+
+    .admin-sangh-logo {
+        width: 66px;
+
+        height: 66px;
+    }
+
+
+    .admin-logo-area {
+        gap: 14px;
+    }
+
+
+    .admin-sangh-title h1 {
+        font-size: 23px;
+    }
+
+
+    .admin-sangh-title p {
+        font-size: 12px;
+    }
+
+
+    .admin-header,
+    .admin-card {
+        width: calc(100% - 40px);
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* ---------- HEADER ---------- */
+
+    .admin-top-container {
+        min-height: 78px;
+
+        padding: 11px 17px;
+
+        gap: 12px;
+    }
+
+
+    .admin-logo-area {
+        gap: 10px;
+
+        min-width: 0;
+    }
+
+
+    .admin-sangh-logo {
+        width: 52px;
+
+        height: 52px;
+    }
+
+
+    .admin-sangh-title {
+        min-width: 0;
+    }
+
+
+    .admin-sangh-title h1 {
+        font-size: 16px;
+
+        letter-spacing: 0.5px;
+
+        white-space: nowrap;
+    }
+
+
+    .admin-sangh-title p {
+        margin-top: 4px;
+
+        font-size: 9px;
+
+        white-space: nowrap;
+    }
+
+
+    .admin-panel-label {
+        padding: 7px 9px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    /* ---------- ADMIN SECTION ---------- */
+
+    .admin-section {
+        padding: 35px 0 50px;
+    }
+
+
+    /* ---------- ADMIN HEADER ---------- */
+
+    .admin-header {
+        width: calc(100% - 30px);
+
+        margin-bottom: 22px;
+
+        padding: 23px 21px;
+
+        text-align: left;
+
+        box-sizing: border-box;
+    }
+
+
+    .admin-header h2 {
+        font-size: 23px;
+    }
+
+
+    .admin-header p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- ADMIN CARD ---------- */
+
+    .admin-card {
+        width: calc(100% - 30px);
+
+        padding: 22px 19px;
+
+        margin-bottom: 20px;
+
+        border-radius: 11px;
+
+        box-sizing: border-box;
+    }
+
+
+    .admin-card-heading {
+        margin-bottom: 18px;
+    }
+
+
+    .admin-card-heading h2 {
+        font-size: 19px;
+    }
+
+
+    .admin-card-heading p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- TOURNAMENT FORM ---------- */
+
+    .tournament-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+    }
+
+
+    .form-group-full {
+        grid-column: 1 / -1;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-width: 0;
+    }
+
+
+    /* ---------- TOURNAMENT LIST ---------- */
+
+    .tournament-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .tournament-item {
+        padding: 15px;
+
+        min-width: 0;
+    }
+
+
+    .tournament-item h3 {
+        font-size: 15px;
+    }
+
+
+    .tournament-item p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- TOURNAMENT ACTIONS ---------- */
+
+    .tournament-actions {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .tournament-actions button {
+        width: auto;
+
+        flex: 1 1 auto;
+    }
+
+
+    /* ---------- TABLE ---------- */
+
+    .membership-table-wrapper,
+    .team-table-wrapper {
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .membership-table,
+    .team-table {
+        min-width: 1000px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .admin-top-container {
+        min-height: 68px;
+
+        padding: 9px 12px;
+
+        gap: 8px;
+    }
+
+
+    .admin-sangh-logo {
+        width: 44px;
+
+        height: 44px;
+    }
+
+
+    .admin-logo-area {
+        gap: 8px;
+    }
+
+
+    .admin-sangh-title h1 {
+        font-size: 12px;
+
+        letter-spacing: 0.3px;
+    }
+
+
+    .admin-sangh-title p {
+        margin-top: 3px;
+
+        font-size: 7px;
+    }
+
+
+    .admin-panel-label {
+        display: none;
+    }
+
+
+    /* ---------- ADMIN CONTENT ---------- */
+
+    .admin-header {
+        width: calc(100% - 20px);
+
+        padding: 21px 17px;
+    }
+
+
+    .admin-card {
+        width: calc(100% - 20px);
+
+        padding: 19px 16px;
+    }
+
+
+    .admin-header h2 {
+        font-size: 21px;
+    }
+
+
+    .admin-header p {
+        font-size: 12px;
+    }
+
+
+    .section-label {
+        font-size: 10px;
+    }
+
+
+    .admin-card-heading h2 {
+        font-size: 17px;
+    }
+
+
+    .admin-card-heading p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- TOURNAMENT FORM ---------- */
+
+    .tournament-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 12px;
+
+        padding: 10px 9px;
+    }
+
+
+    .tournament-create-btn {
+        font-size: 12px;
+
+        padding: 11px 12px;
+    }
+
+
+    /* ---------- TOURNAMENT LIST ---------- */
+
+    .tournament-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+
+    .tournament-item {
+        padding: 12px;
+    }
+
+
+    .tournament-item h3 {
+        font-size: 14px;
+    }
+
+
+    .tournament-item p {
+        font-size: 11px;
+    }
+
+
+    .tournament-status {
+        font-size: 9px;
+
+        padding: 5px 7px;
+    }
+
+
+    .tournament-actions {
+        gap: 5px;
+    }
+
+
+    .tournament-actions button {
+        padding: 6px 7px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .admin-top-container {
+        padding: 8px 9px;
+    }
+
+
+    .admin-sangh-logo {
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    .admin-logo-area {
+        gap: 6px;
+    }
+
+
+    .admin-sangh-title h1 {
+        font-size: 11px;
+    }
+
+
+    .admin-sangh-title p {
+        font-size: 6px;
+    }
+
+
+    .admin-header {
+        width: calc(100% - 14px);
+
+        padding: 18px 13px;
+    }
+
+
+    .admin-card {
+        width: calc(100% - 14px);
+
+        padding: 17px 12px;
+    }
+
+
+    .admin-header h2 {
+        font-size: 19px;
+    }
+
+
+    .admin-header p {
+        font-size: 11px;
+    }
+
+
+    .admin-card-heading h2 {
+        font-size: 16px;
+    }
+
+
+    .admin-card-heading p {
+        font-size: 11px;
+    }
+
+
+    .tournament-form {
+        gap: 8px;
+    }
+
+
+    .form-group label {
+        font-size: 11px;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 11px;
+
+        padding: 9px 7px;
+    }
+
+
+    .tournament-list {
+        gap: 7px;
+    }
+
+
+    .tournament-item {
+        padding: 10px;
+    }
+
+
+    .tournament-item h3 {
+        font-size: 13px;
+    }
+
+
+    .tournament-item p {
+        font-size: 10px;
+    }
+
+
+    .tournament-actions button {
+        font-size: 9px;
+
+        padding: 5px 6px;
+    }
+
+}
+
+/* =====================================================
+   LIVE MATCH SCORE CONTROL
+===================================================== */
+
+.live-score-control {
+    margin-top: 15px;
+    padding: 18px;
+    background: #0b2341;
+    border: 1px solid #203b5c;
+    border-radius: 12px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+
+/* ---------- LIVE HEADER ---------- */
+
+.live-score-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.live-score-heading h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+
+.live-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    background: rgba(240, 138, 36, 0.15);
+    border: 1px solid rgba(240, 138, 36, 0.55);
+    border-radius: 20px;
+    color: #f08a24;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+}
+
+
+.live-status-dot {
+    width: 7px;
+    height: 7px;
+    background: #f08a24;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(240, 138, 36, 0.7);
+}
+
+
+/* ---------- TEAMS ---------- */
+
+.live-score-teams {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 55px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+
+
+.live-team-panel {
+    min-width: 0;
+    padding: 15px;
+    background: #102d4e;
+    border: 1px solid #294563;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+.live-team-name {
+    min-height: 34px;
+    color: #dbe7f3;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+
+.live-score-value {
+    margin: 8px 0 12px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+/* ---------- VS ---------- */
+
+.live-score-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 6px;
+    background: #f08a24;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* ---------- SCORE BUTTONS ---------- */
+
+.live-score-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.live-score-btn {
+    width: 36px;
+    height: 32px;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+.live-score-btn.decrease {
+    background: #344b63;
+}
+
+
+.live-score-btn.increase {
+    background: #f08a24;
+}
+
+
+.live-score-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+.live-score-btn.decrease:hover {
+    background: #435d78;
+}
+
+
+.live-score-btn.increase:hover {
+    background: #d97415;
+}
+
+
+/* ---------- END MATCH ---------- */
+
+.live-match-end {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+}
+
+
+.live-end-btn {
+    min-width: 150px;
+    padding: 9px 18px;
+
+    border: 1px solid rgba(240, 138, 36, 0.6);
+    border-radius: 7px;
+
+    background: transparent;
+    color: #f08a24;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.live-end-btn:hover {
+    background: #f08a24;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   LIVE MATCH — MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .live-score-control {
+        padding: 14px;
+    }
+
+
+    .live-score-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+
+    .live-score-heading h4 {
+        font-size: 12px;
+    }
+
+
+    .live-score-teams {
+        grid-template-columns:
+            minmax(0, 1fr)
+            42px
+            minmax(0, 1fr);
+
+        gap: 7px;
+    }
+
+
+    .live-team-panel {
+        padding: 12px 8px;
+    }
+
+
+    .live-team-name {
+        font-size: 11px;
+    }
+
+
+    .live-score-value {
+        font-size: 27px;
+        margin: 8px 0 11px;
+    }
+
+
+    .live-score-vs {
+        font-size: 9px;
+        padding: 5px;
+    }
+
+
+    .live-score-btn {
+        width: 32px;
+        height: 30px;
+    }
+
+
+    .live-end-btn {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   LIVE MATCH — SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .live-score-control {
+        padding: 12px;
+    }
+
+
+    .live-score-teams {
+        grid-template-columns:
+            minmax(0, 1fr)
+            36px
+            minmax(0, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .live-team-panel {
+        padding: 10px 6px;
+    }
+
+
+    .live-team-name {
+        font-size: 10px;
+        min-height: 30px;
+    }
+
+
+    .live-score-value {
+        font-size: 24px;
+    }
+
+
+    .live-score-vs {
+        font-size: 8px;
+    }
+
+
+    .live-score-btn {
+        width: 29px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+/* =====================================================
+   MATCH LIST — FULL WIDTH
+===================================================== */
+
+#matchList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =====================================================
+   MATCH LIST — MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #matchList {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   MATCH LIST — SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    #matchList {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+}
+
+/* =====================================================
+   LIVE MATCH — EVENT CONTROLS
+===================================================== */
+
+.live-event-controls {
+    margin-top: 18px;
+    padding: 18px;
+    background: #0b2341;
+    border: 1px solid #203b5c;
+    border-radius: 12px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.live-event-controls h4 {
+    margin: 0 0 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+.live-event-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.live-event-buttons .admin-btn {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+
+    border: 1px solid #f08a24;
+    border-radius: 8px;
+
+    background: #102d4e;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.live-event-buttons .admin-btn:hover {
+    background: #f08a24;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+.live-event-buttons .admin-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   LIVE EVENT CONTROLS — MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .live-event-controls {
+        padding: 14px;
+    }
+
+    .live-event-controls h4 {
+        font-size: 12px;
+    }
+
+    .live-event-buttons {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .live-event-buttons .admin-btn {
+        min-height: 40px;
+        font-size: 11px;
+    }
+}
+
+
+/* =====================================================
+   LIVE EVENT CONTROLS — SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .live-event-controls {
+        padding: 12px;
+    }
+
+    .live-event-buttons {
+        gap: 7px;
+    }
+
+    .live-event-buttons .admin-btn {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+}
+
+/* =====================================================
+   LIVE MATCH — EVENT HISTORY
+===================================================== */
+
+.live-event-history {
+    margin-top: 18px;
+    padding: 18px;
+    background: #0b2341;
+    border: 1px solid #203b5c;
+    border-radius: 12px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.live-event-history h4 {
+    margin: 0 0 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+.live-event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.live-event-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    background: #102d4e;
+    border: 1px solid #294563;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.live-event-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.live-event-type {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.live-event-team {
+    color: #f08a24;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.live-event-points {
+    flex-shrink: 0;
+
+    min-width: 38px;
+    padding: 5px 8px;
+
+    background: rgba(240, 138, 36, 0.15);
+    border: 1px solid rgba(240, 138, 36, 0.5);
+    border-radius: 6px;
+
+    color: #f08a24;
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.no-live-events {
+    padding: 18px 12px;
+
+    background: #102d4e;
+    border: 1px dashed #294563;
+    border-radius: 8px;
+
+    color: #9fb2c7;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   EVENT HISTORY — MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .live-event-history {
+        padding: 14px;
+    }
+
+    .live-event-history h4 {
+        font-size: 12px;
+    }
+
+    .live-event-item {
+        padding: 9px 10px;
+    }
+
+    .live-event-type {
+        font-size: 10px;
+    }
+
+    .live-event-team {
+        font-size: 9px;
+    }
+}
+
+
+/* =====================================================
+   EVENT HISTORY — SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .live-event-history {
+        padding: 12px;
+    }
+
+    .live-event-list {
+        max-height: 220px;
+    }
+
+    .live-event-item {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .live-event-info {
+        gap: 5px;
+    }
+
+    .live-event-points {
+        min-width: 34px;
+        padding: 4px 6px;
+        font-size: 9px;
+    }
+}

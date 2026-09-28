@@ -1,0 +1,806 @@
+/* =====================================================
+   TEAM REGISTRATION PAGE
+   GANWAI KABADDI SANGH
+   Theme: Navy Blue + Orange
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.team-hero {
+    padding: 55px 0;
+    background: linear-gradient(
+            135deg,
+            #0b2341,
+            #12365f
+    );
+    color: #ffffff;
+}
+
+.team-hero-tag {
+    margin: 0 0 8px;
+    color: #f2a23a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.team-hero h2 {
+    margin: 0 0 10px;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.team-hero p:last-child {
+    margin: 0;
+    max-width: 650px;
+    color: #dbe5f0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
+.team-registration-section {
+    padding: 45px 0;
+    background: #f5f7fa;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.team-registration-card {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e4e8ee;
+    border-radius: 14px;
+    box-shadow:
+            0 8px 25px rgba(11, 35, 65, 0.08);
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.registration-heading {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8ebef;
+}
+
+.registration-heading p {
+    margin: 0 0 6px;
+    color: #e58a00;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.registration-heading h2 {
+    margin: 0 0 7px;
+    color: #0b2341;
+    font-size: 27px;
+}
+
+.registration-heading span {
+    color: #777777;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   REGISTRATION BLOCK
+===================================================== */
+
+.registration-block {
+    margin-bottom: 30px;
+    padding: 24px;
+    background: #fbfcfd;
+    border: 1px solid #e5e9ee;
+    border-radius: 11px;
+}
+
+
+/* =====================================================
+   BLOCK HEADING
+===================================================== */
+
+.block-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.block-heading > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #0b2341;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.block-heading h3 {
+    margin: 0 0 4px;
+    color: #0b2341;
+    font-size: 18px;
+}
+
+.block-heading p {
+    margin: 0;
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+.form-group label {
+    margin-bottom: 7px;
+    color: #0b2341;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #dc3545;
+}
+
+.form-group label small {
+    color: #888888;
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d6dce4;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #333333;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #0b2341;
+
+    box-shadow:
+            0 0 0 3px rgba(
+                    11,
+                    35,
+                    65,
+                    0.08
+            );
+}
+
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.form-group input[type="file"] {
+    padding: 9px;
+    cursor: pointer;
+}
+
+.field-help {
+    margin-top: 5px;
+    color: #777777;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   PLAYERS
+===================================================== */
+
+.players-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =====================================================
+   PLAYER CARD
+===================================================== */
+
+.player-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e5eb;
+    border-radius: 10px;
+
+    box-shadow:
+            0 3px 10px rgba(
+                    11,
+                    35,
+                    65,
+                    0.04
+            );
+}
+
+.player-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.player-card-title {
+    margin: 0;
+
+    color: #0b2341;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.remove-player-btn {
+    border: none;
+    background: transparent;
+
+    color: #c0392b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.remove-player-btn:hover {
+    text-decoration: underline;
+}
+
+
+.player-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+/* =====================================================
+   ADD PLAYER
+===================================================== */
+
+.add-player-btn {
+    margin-top: 16px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #e58a00;
+    border-radius: 8px;
+
+    background: #fff8ec;
+    color: #b66b00;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+.add-player-btn:hover {
+    background: #e58a00;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   PAYMENT FEE BOX
+===================================================== */
+
+.payment-fee-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+    padding: 18px 20px;
+
+    border: 1px solid #f0d3a1;
+    border-radius: 10px;
+
+    background: #fff8ec;
+}
+
+.payment-fee-box p {
+    margin: 0 0 4px;
+
+    color: #9a6200;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.payment-fee-box h2 {
+    margin: 0;
+
+    color: #0b2341;
+
+    font-size: 28px;
+}
+
+.payment-fee-box > span {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #0b2341;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   PHONEPE PAYMENT
+===================================================== */
+
+.phonepe-payment-box {
+    margin-bottom: 20px;
+    padding: 22px;
+
+    text-align: center;
+
+    border: 1px solid #dfe5ec;
+    border-radius: 11px;
+
+    background: #ffffff;
+}
+
+.phonepe-payment-box h3 {
+    margin: 0 0 7px;
+
+    color: #0b2341;
+
+    font-size: 18px;
+}
+
+.phonepe-payment-box > p {
+    margin: 0 auto 17px;
+
+    max-width: 550px;
+
+    color: #777777;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.phonepe-qr-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px auto 18px;
+}
+
+.phonepe-qr {
+    display: block;
+
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+
+    padding: 8px;
+
+    border: 1px solid #e0e5eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+            0 5px 15px rgba(
+                    11,
+                    35,
+                    65,
+                    0.08
+            );
+}
+
+.payment-note {
+    margin: 0 !important;
+
+    color: #9a6200 !important;
+
+    font-size: 11px !important;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PAYMENT REFERENCE
+===================================================== */
+
+#paymentReference {
+    letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.registration-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 5px;
+    padding: 18px 20px;
+
+    border-radius: 10px;
+
+    background: #0b2341;
+    color: #ffffff;
+}
+
+.registration-summary p {
+    margin: 0 0 4px;
+
+    color: #f2a23a;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.registration-summary h3 {
+    margin: 0 0 4px;
+
+    font-size: 16px;
+}
+
+.registration-summary span {
+    color: #cdd8e5;
+    font-size: 12px;
+}
+
+.player-count {
+    flex-shrink: 0;
+
+    padding: 9px 13px;
+
+    border: 1px solid #e58a00;
+    border-radius: 20px;
+
+    background: rgba(
+            229,
+            138,
+            0,
+            0.12
+    );
+
+    color: #f2a23a;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.submit-section {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.submit-team-btn {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #e58a00;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.submit-team-btn:hover {
+    background: #c97500;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+            0 5px 15px rgba(
+                    229,
+                    138,
+                    0,
+                    0.25
+            );
+}
+
+
+/* Disabled while submitting */
+
+.submit-team-btn:disabled {
+    background: #9aa4af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.submit-section p {
+    margin: 9px 0 0;
+
+    color: #777777;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   DISABLED TOURNAMENT
+===================================================== */
+
+.form-group select:disabled {
+    background: #f0f2f5;
+    color: #888888;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .team-hero {
+        padding: 45px 0;
+    }
+
+    .team-hero h2 {
+        font-size: 31px;
+    }
+
+    .team-registration-section {
+        padding: 35px 0;
+    }
+
+    .team-registration-card {
+        padding: 25px;
+    }
+
+    .registration-block {
+        padding: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .team-hero {
+        padding: 38px 0;
+    }
+
+    .team-hero h2 {
+        font-size: 27px;
+    }
+
+    .team-hero p:last-child {
+        font-size: 13px;
+    }
+
+    .team-registration-section {
+        padding: 25px 0;
+    }
+
+    .team-registration-card {
+        padding: 17px;
+        border-radius: 10px;
+    }
+
+    .registration-heading {
+        margin-bottom: 22px;
+    }
+
+    .registration-heading h2 {
+        font-size: 23px;
+    }
+
+    .registration-block {
+        padding: 17px;
+        margin-bottom: 20px;
+    }
+
+    .form-grid,
+    .player-fields {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .form-group-full {
+        grid-column: auto;
+    }
+
+    .block-heading {
+        gap: 10px;
+    }
+
+    .block-heading h3 {
+        font-size: 16px;
+    }
+
+    .registration-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .player-count {
+        align-self: flex-start;
+    }
+
+    .payment-fee-box {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .phonepe-payment-box {
+        padding: 17px;
+    }
+
+    .phonepe-qr {
+        width: 190px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .team-hero h2 {
+        font-size: 24px;
+    }
+
+    .team-registration-card {
+        padding: 13px;
+    }
+
+    .registration-block {
+        padding: 14px;
+    }
+
+    .player-card {
+        padding: 15px;
+    }
+
+    .phonepe-qr {
+        width: 170px;
+    }
+
+    .payment-fee-box h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* =====================================================
+   TEAM REGISTRATION HERO - CENTER ALIGNMENT
+===================================================== */
+
+.team-hero {
+    text-align: center;
+}
+
+.team-hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-hero-tag,
+.team-hero h2,
+.team-hero p {
+    text-align: center;
+}
+
+.team-hero p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}

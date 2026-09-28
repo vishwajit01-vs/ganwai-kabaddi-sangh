@@ -1,0 +1,140 @@
+/* ================= LOGIN PAGE ================= */
+
+.login-section {
+    padding: 38px 0 45px;
+    background: #ffffff;
+}
+
+.login-card {
+    max-width: 500px;
+    margin: 0 auto;
+
+    padding: 25px 28px;
+
+    background: #f4f8fc;
+
+    border-radius: 10px;
+
+    box-shadow: 0 6px 20px rgba(11, 35, 65, 0.07);
+}
+
+.login-card .form-group {
+    margin-bottom: 15px;
+}
+
+.login-card .form-group label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #0b2341;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.login-card .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+
+    border: 1px solid #d8e1eb;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #0b2341;
+
+    font-size: 13px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.login-card .form-group input:focus {
+    border-color: #f08a24;
+}
+
+
+/* ================= FORGOT PASSWORD ================= */
+
+.forgot-password {
+    text-align: right;
+    margin-top: -3px;
+    margin-bottom: 18px;
+}
+
+.forgot-password a {
+    color: #f08a24;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-card .form-submit {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login-card .form-submit .btn {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ================= SIGNUP LINK ================= */
+
+.signup-link {
+    margin-top: 16px;
+
+    text-align: center;
+
+    color: #53657d;
+    font-size: 13px;
+}
+
+.signup-link a {
+    color: #f08a24;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= LOGIN MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .login-section {
+        padding: 32px 0 38px;
+    }
+
+    .login-card {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 17px;
+    }
+
+    .login-card .form-group {
+        margin-bottom: 13px;
+    }
+
+    .login-card .form-group input {
+        padding: 10px 11px;
+        font-size: 13px;
+    }
+
+}

@@ -1,0 +1,526 @@
+/* ==================================================
+   GANWAI KABADDI SANGH
+   ABOUT PAGE — RESPONSIVE STYLES
+================================================== */
+
+
+/* ==================================================
+   ABOUT SECTION
+================================================== */
+
+.about-section {
+    padding: 55px 0;
+    background: #ffffff;
+}
+
+.about-card {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+    padding: 28px 30px;
+
+    background: #f4f8fc;
+
+    border-left: 5px solid #f08a24;
+    border-radius: 10px;
+
+    box-shadow: 0 7px 22px rgba(11, 35, 65, 0.07);
+
+    box-sizing: border-box;
+}
+
+.about-card h3 {
+    margin: 0 0 10px;
+
+    color: #0b2341;
+
+    font-size: 23px;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.about-card p {
+    margin: 0 0 10px;
+
+    color: #53657d;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   LANGUAGE SWITCHER
+================================================== */
+
+.about-language-section {
+    padding: 0 0 10px;
+    background: #ffffff;
+}
+
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin: 0 auto 30px;
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e9f0;
+    border-radius: 30px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+}
+
+.language-btn {
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #16213e;
+
+    padding: 9px 18px;
+
+    border-radius: 22px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.25s ease,
+            color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.language-btn.active {
+    background: #f28c28;
+    color: #ffffff;
+}
+
+.language-btn:hover {
+    transform: translateY(-1px);
+}
+
+.about-language-note {
+    margin: -15px 0 28px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   ABOUT PAGE CONTENT
+================================================== */
+
+.about-section,
+.upcoming-section,
+.announcement-section,
+.result-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-section .container,
+.upcoming-section .container,
+.announcement-section .container,
+.result-section .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   ABOUT PAGE TEXT SAFETY
+================================================== */
+
+.about-section h1,
+.about-section h2,
+.about-section h3,
+.about-section p,
+
+.upcoming-section h1,
+.upcoming-section h2,
+.upcoming-section h3,
+.upcoming-section p,
+
+.announcement-section h1,
+.announcement-section h2,
+.announcement-section h3,
+.announcement-section p,
+
+.result-section h1,
+.result-section h2,
+.result-section h3,
+.result-section p {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        padding: 48px 0;
+    }
+
+    .about-card {
+        max-width: 100%;
+        padding: 25px 26px;
+    }
+
+    .about-card h3 {
+        font-size: 22px;
+    }
+
+    .about-card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .language-switcher {
+        margin-bottom: 26px;
+    }
+
+    .about-language-note {
+        margin-bottom: 24px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .about-section {
+        padding: 42px 0;
+    }
+
+    .about-section .container,
+    .upcoming-section .container,
+    .announcement-section .container,
+    .result-section .container {
+        width: calc(100% - 30px);
+    }
+
+    .about-card {
+        padding: 22px;
+
+        border-left-width: 4px;
+        border-radius: 9px;
+    }
+
+    .about-card h3 {
+        margin-bottom: 9px;
+
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .about-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .language-switcher {
+        gap: 5px;
+
+        margin-bottom: 22px;
+        padding: 5px;
+
+        border-radius: 26px;
+    }
+
+    .language-btn {
+        padding: 8px 15px;
+
+        font-size: 13px;
+    }
+
+    .about-language-note {
+        margin-top: -10px;
+        margin-bottom: 22px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 480px) {
+
+    .about-section {
+        padding: 36px 0;
+    }
+
+    .about-section .container,
+    .upcoming-section .container,
+    .announcement-section .container,
+    .result-section .container {
+        width: calc(100% - 24px);
+    }
+
+    .about-card {
+        padding: 18px;
+
+        border-left-width: 4px;
+    }
+
+    .about-card h3 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .about-card p {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    .language-switcher {
+        width: auto;
+        max-width: 100%;
+
+        justify-content: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .language-btn {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 8px 12px;
+
+        font-size: 12.5px;
+    }
+
+    .about-language-note {
+        font-size: 12.5px;
+    }
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+================================================== */
+
+@media (max-width: 350px) {
+
+    .about-section {
+        padding: 32px 0;
+    }
+
+    .about-section .container,
+    .upcoming-section .container,
+    .announcement-section .container,
+    .result-section .container {
+        width: calc(100% - 20px);
+    }
+
+    .about-card {
+        padding: 16px;
+    }
+
+    .about-card h3 {
+        font-size: 17px;
+    }
+
+    .about-card p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .language-switcher {
+        gap: 3px;
+        padding: 4px;
+    }
+
+    .language-btn {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    .about-language-note {
+        font-size: 12px;
+    }
+}
+
+
+/* ==================================================
+   EXTRA SMALL DEVICES
+================================================== */
+
+@media (max-width: 320px) {
+
+    .about-card {
+        padding: 14px;
+    }
+
+    .about-card h3 {
+        font-size: 16px;
+    }
+
+    .about-card p {
+        font-size: 12.5px;
+    }
+
+    .language-btn {
+        padding: 7px 8px;
+        font-size: 11.5px;
+    }
+}
+
+/* ==================================================
+   ABOUT HERO + LANGUAGE COMPACT SPACING
+================================================== */
+
+.about-language-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Hero ko compact karna */
+.hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) {
+    padding-top: 42px;
+    padding-bottom: 38px;
+}
+
+.hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) .hero-tag {
+    margin-bottom: 8px;
+}
+
+.hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) h2 {
+    margin-bottom: 10px;
+}
+
+.hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) .hero-description {
+    margin-bottom: 0;
+}
+
+/* Language buttons ko hero ke closer lana */
+.about-language-section .language-switcher {
+    margin-top: -4px;
+    margin-bottom: 16px;
+}
+
+.about-language-section .about-language-note {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) {
+        padding-top: 34px;
+        padding-bottom: 30px;
+    }
+
+    .about-language-section .language-switcher {
+        margin-top: -2px;
+        margin-bottom: 12px;
+    }
+
+    .about-language-section .about-language-note {
+        margin-bottom: 14px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .hero:has(.hero-tag[data-en="ABOUT THE SANGH"]) {
+        padding-top: 30px;
+        padding-bottom: 26px;
+    }
+
+    .about-language-section .language-switcher {
+        margin-bottom: 10px;
+    }
+
+    .about-language-section .about-language-note {
+        margin-bottom: 12px;
+    }
+}
+
+/* ==================================================
+   VISION & MISSION — COMPACT SPACING
+================================================== */
+
+.announcement-section {
+    padding-top: 42px;
+    padding-bottom: 48px;
+}
+
+.announcement-section .section-heading {
+    margin-bottom: 24px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .announcement-section {
+        padding-top: 32px;
+        padding-bottom: 38px;
+    }
+
+    .announcement-section .section-heading {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .announcement-section {
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
+
+    .announcement-section .section-heading {
+        margin-bottom: 17px;
+    }
+}

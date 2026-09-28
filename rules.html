@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Rules & Regulations | Ganwai Kabaddi Sangh</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rules.css">
+
+    <style>
+        /* ================= LANGUAGE SWITCHER ================= */
+
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto 30px;
+            padding: 6px;
+            width: fit-content;
+            background: #ffffff;
+            border: 1px solid #e5e9f0;
+            border-radius: 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .language-btn {
+            border: none;
+            background: transparent;
+            color: #16213e;
+            padding: 9px 18px;
+            border-radius: 22px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .language-btn.active {
+            background: #f28c28;
+            color: #ffffff;
+        }
+
+        .language-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .rules-language-note {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: -15px;
+            margin-bottom: 28px;
+        }
+
+        /* ================= RULE CARD IMPROVEMENT ================= */
+
+        .announcement-card {
+            transition: 0.25s ease;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .rules-list {
+            padding-left: 20px;
+        }
+
+        .rules-list li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .rules-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .language-switcher {
+                margin-bottom: 24px;
+            }
+
+            .language-btn {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+
+            .rules-language-note {
+                font-size: 13px;
+                margin-bottom: 24px;
+            }
+
+            .rules-list {
+                padding-left: 18px;
+            }
+
+            .rules-list li {
+                line-height: 1.6;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <div class="sangh-logo">
+
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+
+            </div>
+
+            <div class="sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="navbar">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="membership.html">
+                Membership
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+            <a
+                    href="rules.html"
+                    class="active"
+            >
+                Rules
+            </a>
+
+            <a href="contact-info.html">
+                Contact & Info
+            </a>
+
+            <a
+                    href="admin.html"
+                    id="adminLink"
+                    style="display: none;"
+            >
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- ================= ACCOUNT ACTIONS ================= -->
+
+        <div
+                class="account-actions"
+                id="accountActions"
+        >
+
+            <!-- Guest User -->
+
+            <div id="guestActions">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Signup
+                </a>
+
+            </div>
+
+
+            <!-- Logged-in User -->
+
+            <button
+                    type="button"
+                    id="userProfileButton"
+                    class="user-profile-button"
+                    style="display: none;"
+            >
+
+                <span class="user-icon">
+                    👤
+                </span>
+
+            </button>
+
+
+            <!-- ================= ACCOUNT OVERLAY ================= -->
+
+            <div
+                    class="account-overlay"
+                    id="accountOverlay"
+            >
+            </div>
+
+
+            <!-- ================= ACCOUNT SIDEBAR ================= -->
+
+            <aside
+                    class="account-sidebar"
+                    id="accountSidebar"
+            >
+
+                <div class="account-sidebar-header">
+
+                    <h2>
+                        My Account
+                    </h2>
+
+                    <button
+                            type="button"
+                            id="closeAccountSidebar"
+                            class="close-account-sidebar"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="account-profile">
+
+                    <div class="account-profile-icon">
+                        👤
+                    </div>
+
+                    <h3 id="sidebarAccountName">
+                        User
+                    </h3>
+
+                    <p id="sidebarAccountEmail">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div class="account-details">
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="sidebarFullName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="sidebarMobile">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="sidebarEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-sidebar-actions">
+
+                    <button
+                            type="button"
+                            id="sidebarLogoutButton"
+                            class="sidebar-logout-button"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    <!-- ================= RULES HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <p class="hero-tag"
+               data-en="RULES & REGULATIONS"
+               data-hi="नियम एवं विनियम">
+                RULES & REGULATIONS
+            </p>
+
+            <h2
+                    data-en="Rules of the Sangh"
+                    data-hi="संघ के नियम">
+                Rules of the Sangh
+            </h2>
+
+            <p class="hero-description"
+               data-en="Clear rules and regulations help maintain fairness, discipline and transparency across the Sangh."
+               data-hi="स्पष्ट नियम और विनियम संघ में निष्पक्षता, अनुशासन और पारदर्शिता बनाए रखने में सहायता करते हैं।">
+                Clear rules and regulations help maintain fairness,
+                discipline and transparency across the Sangh.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RULES SECTION ================= -->
+
+    <section class="announcement-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p
+                        data-en="IMPORTANT GUIDELINES"
+                        data-hi="महत्वपूर्ण दिशानिर्देश">
+                    IMPORTANT GUIDELINES
+                </p>
+
+                <h2
+                        data-en="Rules & Regulations"
+                        data-hi="नियम एवं विनियम">
+                    Rules & Regulations
+                </h2>
+
+            </div>
+
+
+            <!-- LANGUAGE SWITCHER -->
+
+            <div class="language-switcher">
+
+                <button
+                        type="button"
+                        class="language-btn active"
+                        id="englishBtn">
+                    English
+                </button>
+
+                <button
+                        type="button"
+                        class="language-btn"
+                        id="hindiBtn">
+                    हिंदी
+                </button>
+
+            </div>
+
+            <p class="rules-language-note">
+                Choose your preferred language
+            </p>
+
+
+            <div class="announcement-list">
+
+
+                <!-- ================= 01 MEMBERSHIP ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>01</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Membership Rules"
+                                data-hi="सदस्यता के नियम">
+                            Membership Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="Applicants must provide accurate personal information during membership registration."
+                                    data-hi="सदस्यता पंजीकरण के दौरान आवेदकों को सही व्यक्तिगत जानकारी प्रदान करनी होगी।">
+                                Applicants must provide accurate personal
+                                information during membership registration.
+                            </li>
+
+                            <li
+                                    data-en="Every member must follow the rules, regulations and disciplinary guidelines of the Sangh."
+                                    data-hi="प्रत्येक सदस्य को संघ के नियमों, विनियमों और अनुशासन संबंधी दिशानिर्देशों का पालन करना होगा।">
+                                Every member must follow the rules,
+                                regulations and disciplinary guidelines
+                                of the Sangh.
+                            </li>
+
+                            <li
+                                    data-en="The applicable membership fee must be paid at the time of registration."
+                                    data-hi="लागू सदस्यता शुल्क का भुगतान पंजीकरण के समय करना होगा।">
+                                The applicable membership fee must be paid
+                                at the time of registration.
+                            </li>
+
+                            <li
+                                    data-en="Membership is personal and cannot be transferred to another person."
+                                    data-hi="सदस्यता व्यक्तिगत है और इसे किसी अन्य व्यक्ति को हस्तांतरित नहीं किया जा सकता।">
+                                Membership is personal and cannot be
+                                transferred to another person.
+                            </li>
+
+                            <li
+                                    data-en="Members must maintain discipline, respect and sportsmanship during tournaments, matches and Sangh activities."
+                                    data-hi="सदस्यों को टूर्नामेंट, मैच और संघ की गतिविधियों के दौरान अनुशासन, सम्मान और खेल भावना बनाए रखनी होगी।">
+                                Members must maintain discipline, respect
+                                and sportsmanship during tournaments,
+                                matches and Sangh activities.
+                            </li>
+
+                            <li
+                                    data-en="The Sangh may suspend or cancel membership in case of false information or serious misconduct."
+                                    data-hi="गलत जानकारी या गंभीर अनुशासनहीनता की स्थिति में संघ सदस्यता को निलंबित या रद्द कर सकता है।">
+                                The Sangh may suspend or cancel membership
+                                in case of false information or serious
+                                misconduct.
+                            </li>
+
+                            <li
+                                    data-en="The membership validity period and renewal process will be decided by the Sangh."
+                                    data-hi="सदस्यता की वैधता अवधि और नवीनीकरण प्रक्रिया संघ द्वारा निर्धारित की जाएगी।">
+                                The membership validity period and renewal
+                                process will be decided by the Sangh.
+                            </li>
+
+                            <li
+                                    data-en="Membership fees and refund conditions will be governed by the payment policy approved by the Sangh."
+                                    data-hi="सदस्यता शुल्क और रिफंड की शर्तें संघ द्वारा स्वीकृत भुगतान नीति के अनुसार होंगी।">
+                                Membership fees and refund conditions will
+                                be governed by the payment policy approved
+                                by the Sangh.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 02 TEAM ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>02</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Team Rules"
+                                data-hi="टीम के नियम">
+                            Team Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="Every team must complete the official registration process before participating in a tournament."
+                                    data-hi="प्रत्येक टीम को टूर्नामेंट में भाग लेने से पहले आधिकारिक पंजीकरण प्रक्रिया पूरी करनी होगी।">
+                                Every team must complete the official
+                                registration process before participating
+                                in a tournament.
+                            </li>
+
+                            <li
+                                    data-en="The team must provide correct details of the captain, manager and registered players."
+                                    data-hi="टीम को कप्तान, मैनेजर और पंजीकृत खिलाड़ियों की सही जानकारी प्रदान करनी होगी।">
+                                The team must provide correct details of
+                                the captain, manager and registered players.
+                            </li>
+
+                            <li
+                                    data-en="Only registered players will be allowed to participate in official matches."
+                                    data-hi="केवल पंजीकृत खिलाड़ियों को आधिकारिक मैचों में भाग लेने की अनुमति होगी।">
+                                Only registered players will be allowed
+                                to participate in official matches.
+                            </li>
+
+                            <li
+                                    data-en="A team must report to the venue according to the schedule provided by the Sangh."
+                                    data-hi="टीम को संघ द्वारा दिए गए कार्यक्रम के अनुसार निर्धारित स्थान पर पहुंचना होगा।">
+                                A team must report to the venue according
+                                to the schedule provided by the Sangh.
+                            </li>
+
+                            <li
+                                    data-en="Team members must follow the instructions of match officials and organizers."
+                                    data-hi="टीम के सदस्यों को मैच अधिकारियों और आयोजकों के निर्देशों का पालन करना होगा।">
+                                Team members must follow the instructions
+                                of match officials and organizers.
+                            </li>
+
+                            <li
+                                    data-en="Any change in the registered team or player list must be approved by the Sangh."
+                                    data-hi="पंजीकृत टीम या खिलाड़ियों की सूची में किसी भी बदलाव को संघ द्वारा अनुमोदित किया जाना आवश्यक है।">
+                                Any change in the registered team or player
+                                list must be approved by the Sangh.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 03 PLAYER ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>03</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Player Rules"
+                                data-hi="खिलाड़ी के नियम">
+                            Player Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="Players must provide correct information during registration."
+                                    data-hi="खिलाड़ियों को पंजीकरण के दौरान सही जानकारी प्रदान करनी होगी।">
+                                Players must provide correct information
+                                during registration.
+                            </li>
+
+                            <li
+                                    data-en="A player must participate only for the team for which they are officially registered."
+                                    data-hi="खिलाड़ी केवल उसी टीम के लिए भाग ले सकता है जिसके लिए वह आधिकारिक रूप से पंजीकृत है।">
+                                A player must participate only for the team
+                                for which they are officially registered.
+                            </li>
+
+                            <li
+                                    data-en="Players must maintain discipline and sportsmanship during matches."
+                                    data-hi="खिलाड़ियों को मैचों के दौरान अनुशासन और खेल भावना बनाए रखनी होगी।">
+                                Players must maintain discipline and
+                                sportsmanship during matches.
+                            </li>
+
+                            <li
+                                    data-en="Players must respect opponents, teammates, officials and organizers."
+                                    data-hi="खिलाड़ियों को विरोधियों, साथियों, अधिकारियों और आयोजकों का सम्मान करना होगा।">
+                                Players must respect opponents, teammates,
+                                officials and organizers.
+                            </li>
+
+                            <li
+                                    data-en="Any form of serious misconduct may result in disciplinary action."
+                                    data-hi="किसी भी गंभीर अनुशासनहीनता के कारण अनुशासनात्मक कार्रवाई की जा सकती है।">
+                                Any form of serious misconduct may result
+                                in disciplinary action.
+                            </li>
+
+                            <li
+                                    data-en="Players must follow the decisions and instructions of authorized match officials."
+                                    data-hi="खिलाड़ियों को अधिकृत मैच अधिकारियों के निर्णय और निर्देशों का पालन करना होगा।">
+                                Players must follow the decisions and
+                                instructions of authorized match officials.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 04 TOURNAMENT ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>04</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Tournament Rules"
+                                data-hi="टूर्नामेंट के नियम">
+                            Tournament Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="Teams must complete registration before the announced registration deadline."
+                                    data-hi="टीमों को घोषित पंजीकरण की अंतिम तिथि से पहले पंजीकरण पूरा करना होगा।">
+                                Teams must complete registration before
+                                the announced registration deadline.
+                            </li>
+
+                            <li
+                                    data-en="Tournament entry fees must be paid according to the registration process."
+                                    data-hi="टूर्नामेंट प्रवेश शुल्क का भुगतान पंजीकरण प्रक्रिया के अनुसार करना होगा।">
+                                Tournament entry fees must be paid
+                                according to the registration process.
+                            </li>
+
+                            <li
+                                    data-en="Tournament schedules will be announced by the Sangh."
+                                    data-hi="टूर्नामेंट का कार्यक्रम संघ द्वारा घोषित किया जाएगा।">
+                                Tournament schedules will be announced
+                                by the Sangh.
+                            </li>
+
+                            <li
+                                    data-en="Teams must follow the tournament format and competition rules announced by the organizers."
+                                    data-hi="टीमों को आयोजकों द्वारा घोषित टूर्नामेंट प्रारूप और प्रतियोगिता नियमों का पालन करना होगा।">
+                                Teams must follow the tournament format
+                                and competition rules announced by the
+                                organizers.
+                            </li>
+
+                            <li
+                                    data-en="The Sangh may make necessary schedule changes due to organizational or unavoidable circumstances."
+                                    data-hi="संगठनात्मक या अपरिहार्य परिस्थितियों के कारण संघ आवश्यक कार्यक्रम परिवर्तन कर सकता है।">
+                                The Sangh may make necessary schedule
+                                changes due to organizational or
+                                unavoidable circumstances.
+                            </li>
+
+                            <li
+                                    data-en="The decision of authorized tournament officials regarding match proceedings will be followed."
+                                    data-hi="मैच संचालन से संबंधित अधिकृत टूर्नामेंट अधिकारियों के निर्णय का पालन किया जाएगा।">
+                                The decision of authorized tournament
+                                officials regarding match proceedings
+                                will be followed.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 05 MATCH ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>05</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Match Rules"
+                                data-hi="मैच के नियम">
+                            Match Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="Teams must report to the match venue before their scheduled match time."
+                                    data-hi="टीमों को निर्धारित मैच समय से पहले मैच स्थल पर पहुंचना होगा।">
+                                Teams must report to the match venue before
+                                their scheduled match time.
+                            </li>
+
+                            <li
+                                    data-en="Matches will be conducted according to the tournament format and applicable Kabaddi rules."
+                                    data-hi="मैच टूर्नामेंट प्रारूप और लागू कबड्डी नियमों के अनुसार आयोजित किए जाएंगे।">
+                                Matches will be conducted according to
+                                the tournament format and applicable
+                                Kabaddi rules.
+                            </li>
+
+                            <li
+                                    data-en="Match officials will be responsible for conducting and supervising the match."
+                                    data-hi="मैच अधिकारियों की जिम्मेदारी मैच का संचालन और पर्यवेक्षण करना होगी।">
+                                Match officials will be responsible for
+                                conducting and supervising the match.
+                            </li>
+
+                            <li
+                                    data-en="Players must follow the instructions of referees and match officials."
+                                    data-hi="खिलाड़ियों को रेफरी और मैच अधिकारियों के निर्देशों का पालन करना होगा।">
+                                Players must follow the instructions of
+                                referees and match officials.
+                            </li>
+
+                            <li
+                                    data-en="Match scores and results will be recorded by the authorized officials."
+                                    data-hi="मैच के स्कोर और परिणाम अधिकृत अधिकारियों द्वारा दर्ज किए जाएंगे।">
+                                Match scores and results will be recorded
+                                by the authorized officials.
+                            </li>
+
+                            <li
+                                    data-en="Any official protest or dispute must be raised through the process specified by the Sangh."
+                                    data-hi="किसी भी आधिकारिक आपत्ति या विवाद को संघ द्वारा निर्धारित प्रक्रिया के माध्यम से उठाया जाना चाहिए।">
+                                Any official protest or dispute must be
+                                raised through the process specified
+                                by the Sangh.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 06 DISCIPLINE ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>06</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Discipline Rules"
+                                data-hi="अनुशासन के नियम">
+                            Discipline Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="All players, teams and members must maintain respectful behaviour."
+                                    data-hi="सभी खिलाड़ियों, टीमों और सदस्यों को सम्मानजनक व्यवहार बनाए रखना होगा।">
+                                All players, teams and members must maintain
+                                respectful behaviour.
+                            </li>
+
+                            <li
+                                    data-en="Abusive, threatening or seriously disrespectful behaviour is not permitted."
+                                    data-hi="अपमानजनक, धमकीपूर्ण या गंभीर रूप से असम्मानजनक व्यवहार की अनुमति नहीं है।">
+                                Abusive, threatening or seriously
+                                disrespectful behaviour is not permitted.
+                            </li>
+
+                            <li
+                                    data-en="Players and teams must respect match officials and tournament organizers."
+                                    data-hi="खिलाड़ियों और टीमों को मैच अधिकारियों और टूर्नामेंट आयोजकों का सम्मान करना होगा।">
+                                Players and teams must respect match
+                                officials and tournament organizers.
+                            </li>
+
+                            <li
+                                    data-en="Damage to tournament or Sangh property may lead to disciplinary action."
+                                    data-hi="टूर्नामेंट या संघ की संपत्ति को नुकसान पहुंचाने पर अनुशासनात्मक कार्रवाई की जा सकती है।">
+                                Damage to tournament or Sangh property may
+                                lead to disciplinary action.
+                            </li>
+
+                            <li
+                                    data-en="Serious violations may result in suspension, disqualification or cancellation of participation, as decided by the Sangh."
+                                    data-hi="गंभीर उल्लंघनों के परिणामस्वरूप संघ के निर्णय के अनुसार निलंबन, अयोग्यता या भागीदारी रद्द की जा सकती है।">
+                                Serious violations may result in suspension,
+                                disqualification or cancellation of
+                                participation, as decided by the Sangh.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= 07 PAYMENT ================= -->
+
+                <div class="announcement-card">
+
+                    <div class="announcement-date">
+                        <strong>07</strong>
+                    </div>
+
+                    <div class="announcement-content">
+
+                        <h3
+                                data-en="Payment & Refund Rules"
+                                data-hi="भुगतान एवं रिफंड के नियम">
+                            Payment & Refund Rules
+                        </h3>
+
+                        <ul class="rules-list">
+
+                            <li
+                                    data-en="All applicable fees must be paid through the payment method specified by the Sangh."
+                                    data-hi="सभी लागू शुल्क संघ द्वारा निर्दिष्ट भुगतान माध्यम से जमा किए जाने चाहिए।">
+                                All applicable fees must be paid through
+                                the payment method specified by the Sangh.
+                            </li>
+
+                            <li
+                                    data-en="Registration or membership will be considered complete only after successful payment verification."
+                                    data-hi="पंजीकरण या सदस्यता सफल भुगतान सत्यापन के बाद ही पूर्ण मानी जाएगी।">
+                                Registration or membership will be
+                                considered complete only after successful
+                                payment verification.
+                            </li>
+
+                            <li
+                                    data-en="Applicants should keep their payment receipt or transaction details safely."
+                                    data-hi="आवेदकों को अपनी भुगतान रसीद या लेनदेन विवरण सुरक्षित रखना चाहिए।">
+                                Applicants should keep their payment
+                                receipt or transaction details safely.
+                            </li>
+
+                            <li
+                                    data-en="Refund eligibility will depend on the refund policy applicable to the particular membership or tournament."
+                                    data-hi="रिफंड की पात्रता संबंधित सदस्यता या टूर्नामेंट पर लागू रिफंड नीति पर निर्भर करेगी।">
+                                Refund eligibility will depend on the
+                                refund policy applicable to the particular
+                                membership or tournament.
+                            </li>
+
+                            <li
+                                    data-en="Refund requests, where applicable, must be submitted within the specified period."
+                                    data-hi="जहां लागू हो, रिफंड अनुरोध निर्धारित अवधि के भीतर प्रस्तुत करना होगा।">
+                                Refund requests, where applicable, must be
+                                submitted within the specified period.
+                            </li>
+
+                            <li
+                                    data-en="The final payment and refund policy will be determined by the Sangh and may be updated when required."
+                                    data-hi="अंतिम भुगतान और रिफंड नीति संघ द्वारा निर्धारित की जाएगी और आवश्यकता पड़ने पर इसे अपडेट किया जा सकता है।">
+                                The final payment and refund policy will be
+                                determined by the Sangh and may be updated
+                                when required.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>© 2026 Ganwai Kabaddi Sangh</p>
+        <p>Digital Platform Developer: Vishwajit Chaubey</p>
+
+
+
+    </div>
+
+</footer>
+
+
+<!-- ================= LANGUAGE SCRIPT ================= -->
+
+<script>
+
+    const englishBtn = document.getElementById("englishBtn");
+    const hindiBtn = document.getElementById("hindiBtn");
+
+    const languageElements =
+        document.querySelectorAll("[data-en][data-hi]");
+
+
+    function changeLanguage(language) {
+
+        languageElements.forEach((element) => {
+
+            element.textContent =
+                element.getAttribute(
+                    language === "hi" ? "data-hi" : "data-en"
+                );
+
+        });
+
+
+        if (language === "hi") {
+
+            hindiBtn.classList.add("active");
+            englishBtn.classList.remove("active");
+
+            document.documentElement.lang = "hi";
+
+        } else {
+
+            englishBtn.classList.add("active");
+            hindiBtn.classList.remove("active");
+
+            document.documentElement.lang = "en";
+
+        }
+
+
+        localStorage.setItem(
+            "rulesPageLanguage",
+            language
+        );
+
+    }
+
+
+    englishBtn.addEventListener("click", function () {
+
+        changeLanguage("en");
+
+    });
+
+
+    hindiBtn.addEventListener("click", function () {
+
+        changeLanguage("hi");
+
+    });
+
+
+    const savedLanguage =
+        localStorage.getItem("rulesPageLanguage");
+
+
+    if (savedLanguage === "hi") {
+
+        changeLanguage("hi");
+
+    } else {
+
+        changeLanguage("en");
+
+    }
+
+</script>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

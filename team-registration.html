@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Team Registration | Ganwai Kabaddi Sangh
+    </title>
+
+    <link
+            rel="stylesheet"
+            href="css/style.css"
+    >
+
+    <link
+            rel="stylesheet"
+            href="css/team-registration.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <div class="sangh-logo">
+                <img
+                        src="images/logo.png"
+                        alt="Ganwai Kabaddi Sangh Logo"
+                >
+            </div>
+
+            <div class="sangh-title">
+
+                <h1>
+                    GANWAI KABADDI SANGH
+                </h1>
+
+                <p>
+                    Established 2022
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navbar">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="membership.html">
+                Membership
+            </a>
+
+            <a href="tournaments.html">
+                Tournaments
+            </a>
+
+            <a href="results.html">
+                Results
+            </a>
+
+            <a href="rules.html">
+                Rules
+            </a>
+
+            <a href="contact-info.html">
+                Contact & Info
+            </a>
+
+            <a
+                    href="admin.html"
+                    id="adminLink"
+                    style="display: none;"
+            >
+                Admin
+            </a>
+
+        </nav>
+
+
+        <!-- ================= ACCOUNT ================= -->
+
+        <div
+                class="account-actions"
+                id="accountActions"
+        >
+
+            <!-- Guest Actions -->
+
+            <div id="guestActions">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Signup
+                </a>
+
+            </div>
+
+
+            <!-- Logged-in User -->
+
+            <button
+                    type="button"
+                    id="userProfileButton"
+                    class="user-profile-button"
+                    style="display: none;"
+            >
+
+                <span class="user-icon">
+                    👤
+                </span>
+
+            </button>
+
+
+            <!-- Account Overlay -->
+
+            <div
+                    class="account-overlay"
+                    id="accountOverlay"
+            ></div>
+
+
+            <!-- Account Sidebar -->
+
+            <aside
+                    class="account-sidebar"
+                    id="accountSidebar"
+            >
+
+                <div class="account-sidebar-header">
+
+                    <h2>
+                        My Account
+                    </h2>
+
+                    <button
+                            type="button"
+                            id="closeAccountSidebar"
+                            class="close-account-sidebar"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="account-profile">
+
+                    <div class="account-profile-icon">
+                        👤
+                    </div>
+
+                    <h3 id="sidebarAccountName">
+                        User
+                    </h3>
+
+                    <p id="sidebarAccountEmail">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div class="account-details">
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="sidebarFullName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Mobile Number
+                        </span>
+
+                        <strong id="sidebarMobile">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="sidebarEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-sidebar-actions">
+
+                    <button
+                            type="button"
+                            id="sidebarLogoutButton"
+                            class="sidebar-logout-button"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <section class="team-hero">
+
+        <div class="container">
+
+            <p class="team-hero-tag">
+                TEAM REGISTRATION
+            </p>
+
+            <h2>
+                Register Your Kabaddi Team
+            </h2>
+
+            <p>
+                Register your team for upcoming
+                Ganwai Kabaddi Sangh tournaments.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="team-registration-section">
+
+        <div class="container">
+
+
+            <div class="team-registration-card">
+
+
+                <div class="registration-heading">
+
+                    <p>
+                        TEAM DETAILS
+                    </p>
+
+                    <h2>
+                        Team Registration Form
+                    </h2>
+
+                    <span>
+                        Please provide accurate team and
+                        player information.
+                    </span>
+
+                </div>
+
+
+
+                <form
+                        id="teamRegistrationForm"
+                        enctype="multipart/form-data"
+                >
+
+
+                    <!-- =================================================
+                         01. TOURNAMENT
+                    ================================================== -->
+
+                    <div class="registration-block">
+
+                        <div class="block-heading">
+
+                            <span>
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Select Tournament
+                                </h3>
+
+                                <p>
+                                    Choose the tournament
+                                    for which your team is
+                                    registering.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="tournamentId">
+                                Tournament
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                    id="tournamentId"
+                                    name="tournamentId"
+                                    required
+                            >
+
+                                <option value="">
+                                    Loading tournaments...
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         02. TEAM INFORMATION
+                    ================================================== -->
+
+                    <div class="registration-block">
+
+                        <div class="block-heading">
+
+                            <span>
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Team Information
+                                </h3>
+
+                                <p>
+                                    Enter your team's basic
+                                    information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-grid">
+
+
+                            <!-- TEAM NAME -->
+
+                            <div class="form-group">
+
+                                <label for="teamName">
+                                    Team Name
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                        type="text"
+                                        id="teamName"
+                                        name="teamName"
+                                        placeholder="Enter team name"
+                                        required
+                                >
+
+                            </div>
+
+
+
+                            <!-- CAPTAIN NAME -->
+
+                            <div class="form-group">
+
+                                <label for="captainName">
+                                    Captain Name
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                        type="text"
+                                        id="captainName"
+                                        name="captainName"
+                                        placeholder="Enter captain name"
+                                        required
+                                >
+
+                            </div>
+
+
+
+                            <!-- CAPTAIN MOBILE -->
+
+                            <div class="form-group">
+
+                                <label for="captainMobile">
+                                    Captain Mobile
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                        type="tel"
+                                        id="captainMobile"
+                                        name="captainMobile"
+                                        placeholder="Enter mobile number"
+                                        required
+                                >
+
+                            </div>
+
+
+
+                            <!-- TEAM EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="teamEmail">
+                                    Team Email
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                        type="email"
+                                        id="teamEmail"
+                                        name="email"
+                                        placeholder="Enter team email"
+                                        required
+                                >
+
+                            </div>
+
+
+
+                            <!-- LOCATION -->
+
+                            <div class="form-group">
+
+                                <label for="location">
+                                    District / Location
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                        type="text"
+                                        id="location"
+                                        name="location"
+                                        placeholder="Enter district or location"
+                                        required
+                                >
+
+                            </div>
+
+
+
+                            <!-- TEAM LOGO -->
+
+                            <div class="form-group">
+
+                                <label for="teamLogo">
+
+                                    Team Logo
+
+                                    <small>
+                                        (Optional)
+                                    </small>
+
+                                </label>
+
+                                <input
+                                        type="file"
+                                        id="teamLogo"
+                                        name="teamLogo"
+                                        accept="image/jpeg,image/png"
+                                >
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         03. PLAYERS
+                    ================================================== -->
+
+                    <div class="registration-block">
+
+                        <div class="block-heading">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Players
+                                </h3>
+
+                                <p>
+                                    Add the players who will
+                                    represent your team.
+                                    Maximum 15 players.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                                id="playersContainer"
+                                class="players-container"
+                        >
+                        </div>
+
+
+
+                        <button
+                                type="button"
+                                id="addPlayerBtn"
+                                class="add-player-btn"
+                        >
+
+                            + Add Player
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         04. PAYMENT
+                    ================================================== -->
+
+                    <div class="registration-block">
+
+                        <div class="block-heading">
+
+                            <span>
+                                04
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Registration Payment
+                                </h3>
+
+                                <p>
+                                    Pay the mandatory team
+                                    registration fee of ₹51.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- REGISTRATION FEE -->
+
+                        <div class="payment-fee-box">
+
+                            <div>
+
+                                <p>
+                                    TEAM REGISTRATION FEE
+                                </p>
+
+                                <h2>
+                                    ₹51
+                                </h2>
+
+                            </div>
+
+                            <span>
+                                Mandatory
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- PHONEPE QR -->
+
+                        <div class="phonepe-payment-box">
+
+                            <h3>
+                                Pay Using PhonePe
+                            </h3>
+
+                            <p>
+                                Scan the QR code below and
+                                complete the payment of ₹51.
+                            </p>
+
+
+                            <div class="phonepe-qr-wrapper">
+
+                                <img
+                                        src="images/phonepe-qr.jpeg"
+                                        alt="Ganwai Kabaddi Sangh PhonePe Payment QR"
+                                        class="phonepe-qr"
+                                >
+
+                            </div>
+
+
+                            <p class="payment-note">
+                                After completing the payment,
+                                enter your Payment Reference /
+                                UTR number below.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- PAYMENT REFERENCE -->
+
+                        <div class="form-group">
+
+                            <label for="paymentReference">
+
+                                Payment Reference / UTR
+
+                                <span>*</span>
+
+                            </label>
+
+                            <input
+                                    type="text"
+                                    id="paymentReference"
+                                    name="paymentReference"
+                                    placeholder="Enter PhonePe transaction reference / UTR"
+                                    required
+                            >
+
+                            <small class="field-help">
+                                Enter the transaction/reference
+                                number shown after your payment.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         REGISTRATION SUMMARY
+                    ================================================== -->
+
+                    <div class="registration-summary">
+
+                        <div>
+
+                            <p>
+                                REGISTRATION SUMMARY
+                            </p>
+
+                            <h3>
+                                Ready to Register?
+                            </h3>
+
+                            <span>
+                                Review your team, player and
+                                payment information before
+                                submitting.
+                            </span>
+
+                        </div>
+
+
+                        <div
+                                id="playerCount"
+                                class="player-count"
+                        >
+                            0 Players
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SUBMIT
+                    ================================================== -->
+
+                    <div class="submit-section">
+
+                        <button
+                                type="submit"
+                                class="submit-team-btn"
+                        >
+
+                            Submit Team Registration
+
+                        </button>
+
+
+                        <p>
+                            Your payment and registration will
+                            be verified by the Sangh admin.
+                        </p>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 Ganwai Kabaddi Sangh
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="js/script.js"></script>
+
+<script src="js/team-registration.js"></script>
+
+
+<!-- ================= LOGIN PROTECTION ================= -->
+
+<script>
+
+    const teamRegistrationAuthToken =
+        localStorage.getItem("authToken");
+
+    if (!teamRegistrationAuthToken) {
+
+        alert(
+            "Please login or create an account before registering a team."
+        );
+
+        window.location.href = "login.html";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
+
