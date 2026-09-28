@@ -8,7 +8,7 @@ async function loadHomeLiveMatch() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/matches/live"
+                "/api/matches/live"
             );
 
         const data =
@@ -166,7 +166,7 @@ async function loadRecentMatchResult() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/matches"
+                "/api/matches"
             );
 
 

@@ -104,7 +104,7 @@ if (signupForm) {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/account/signup",
+                        "/api/account/signup",
                         {
                             method: "POST",
 

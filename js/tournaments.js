@@ -11,7 +11,7 @@ async function loadPublicTournaments() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/tournaments"
+                "/api/tournaments"
             );
 
 
@@ -368,7 +368,7 @@ async function loadPublicMatchSchedule() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/matches"
+                "/api/matches"
             );
 
 

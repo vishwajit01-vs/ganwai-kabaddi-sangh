@@ -68,7 +68,7 @@ async function loadTournaments() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/tournaments",
+                "/api/tournaments",
                 {
                     method: "GET"
                 }
@@ -1390,7 +1390,7 @@ if (teamRegistrationForm) {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/teams",
+                        "/api/teams",
                         {
 
                             method: "POST",

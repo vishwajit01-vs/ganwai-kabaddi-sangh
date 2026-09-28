@@ -120,7 +120,7 @@ async function loadMemberships() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/admin/memberships",
+                "/api/admin/memberships",
                 {
                     headers: {
                         "Authorization":
@@ -495,7 +495,7 @@ async function verifyPayment(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/verify-payment`,
+                `/api/admin/memberships/${id}/verify-payment`,
                 {
                     method: "PATCH",
                     headers: {
@@ -545,7 +545,7 @@ async function rejectPayment(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/reject-payment`,
+                `/api/admin/memberships/${id}/reject-payment`,
                 {
                     method: "PATCH",
                     headers: {
@@ -599,7 +599,7 @@ async function approveMembership(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/approve`,
+                `/api/admin/memberships/${id}/approve`,
                 {
                     method: "PATCH",
                     headers: {
@@ -649,7 +649,7 @@ async function rejectMembership(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/reject`,
+                `/api/admin/memberships/${id}/reject`,
                 {
                     method: "PATCH",
                     headers: {
@@ -703,7 +703,7 @@ async function verifyRenewal(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/verify-renewal`,
+                `/api/admin/memberships/${id}/verify-renewal`,
                 {
                     method: "PATCH",
                     headers: {
@@ -753,7 +753,7 @@ async function rejectRenewal(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/reject-renewal`,
+                `/api/admin/memberships/${id}/reject-renewal`,
                 {
                     method: "PATCH",
                     headers: {
@@ -807,7 +807,7 @@ async function generateMembershipPDF(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/admin/memberships/${id}/pdf`,
+                `/api/admin/memberships/${id}/pdf`,
                 {
                     headers: {
                         "Authorization":
@@ -930,7 +930,7 @@ async function loadTeams() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/teams",
+                "/api/teams",
                 {
                     headers: {
                         "Authorization":
@@ -1228,7 +1228,7 @@ async function verifyTeamPayment(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/teams/${id}/payment-status`,
+                `/api/teams/${id}/payment-status`,
                 {
                     method: "PUT",
                     headers: getAuthHeaders(),
@@ -1278,7 +1278,7 @@ async function rejectTeamPayment(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/teams/${id}/payment-status`,
+                `/api/teams/${id}/payment-status`,
                 {
                     method: "PUT",
                     headers: getAuthHeaders(),
@@ -1332,7 +1332,7 @@ async function approveTeam(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/teams/${id}/status`,
+                `/api/teams/${id}/status`,
                 {
                     method: "PUT",
                     headers: getAuthHeaders(),
@@ -1391,7 +1391,7 @@ async function rejectTeam(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/teams/${id}/status`,
+                `/api/teams/${id}/status`,
                 {
                     method: "PUT",
                     headers: getAuthHeaders(),
@@ -1445,7 +1445,7 @@ async function viewTeam(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/teams/${id}`,
+                `/api/teams/${id}`,
                 {
                     headers: {
                         "Authorization":
@@ -1775,7 +1775,7 @@ if (tournamentForm) {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/tournaments/create",
+                        "/api/tournaments/create",
                         {
                             method: "POST",
                             headers: getAuthHeaders(),
@@ -1881,7 +1881,7 @@ async function loadTournaments() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/tournaments"
+                "/api/tournaments"
             );
 
 
@@ -2125,7 +2125,7 @@ async function deleteTournament(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/tournaments/${id}`,
+                `/api/tournaments/${id}`,
                 {
                     method: "DELETE",
 
@@ -2182,7 +2182,7 @@ async function editTournament(id) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/tournaments/${id}`
+                `/api/tournaments/${id}`
             );
 
 
@@ -2414,7 +2414,7 @@ async function editTournament(id) {
 
         const responseUpdate =
             await fetch(
-                `http://localhost:5000/api/tournaments/${id}`,
+                `/api/tournaments/${id}`,
                 {
                     method: "PUT",
 
@@ -2513,7 +2513,7 @@ async function loadMatchTournaments() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/tournaments"
+                "/api/tournaments"
             );
 
 
@@ -2760,7 +2760,7 @@ if (matchForm) {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/matches/create",
+                        "/api/matches/create",
                         {
                             method: "POST",
 
@@ -2877,7 +2877,7 @@ async function startLiveMatch(matchId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}/start-live`,
+                `/api/matches/${matchId}/start-live`,
                 {
                     method: "PUT",
                     headers: getAuthHeaders()
@@ -2935,7 +2935,7 @@ async function updateMatchScore(matchId, team, change) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}`
+                `/api/matches/${matchId}`
             );
 
 
@@ -3008,7 +3008,7 @@ async function updateMatchScore(matchId, team, change) {
 
         const updateResponse =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}/score`,
+                `/api/matches/${matchId}/score`,
                 {
                     method: "PUT",
 
@@ -3078,7 +3078,7 @@ async function addLiveMatchEvent(
 
         const response =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}/events`,
+                `/api/matches/${matchId}/events`,
                 {
                     method: "POST",
 
@@ -3151,7 +3151,7 @@ async function endLiveMatch(matchId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}/end`,
+                `/api/matches/${matchId}/end`,
                 {
                     method: "PUT",
 
@@ -3220,7 +3220,7 @@ async function deleteMatch(matchId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/matches/${matchId}`,
+                `/api/matches/${matchId}`,
                 {
                     method: "DELETE",
                     headers: getAuthHeaders()
@@ -3306,7 +3306,7 @@ async function loadMatches() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/matches"
+                "/api/matches"
             );
 
 

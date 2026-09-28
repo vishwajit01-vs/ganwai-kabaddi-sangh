@@ -334,7 +334,7 @@ if (membershipForm) {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/membership/apply",
+                    "/api/membership/apply",
                     {
                         method: "POST",
 
@@ -413,7 +413,7 @@ if (loginForm) {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/account/login",
+                    "/api/account/login",
                     {
                         method: "POST",
 
@@ -727,7 +727,7 @@ document.addEventListener(
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/account/me",
+                    "/api/account/me",
                     {
                         method: "GET",
 
@@ -803,7 +803,7 @@ const adminLink =
 if (adminLink && authToken) {
 
     fetch(
-        "http://localhost:5000/api/account/me",
+        "/api/account/me",
         {
             headers: {
                 "Authorization":
@@ -894,7 +894,7 @@ if (myMembershipSection) {
     } else {
 
         fetch(
-            "http://localhost:5000/api/membership/my-membership",
+            "/api/membership/my-membership",
             {
                 headers: {
                     "Authorization":
@@ -1023,7 +1023,7 @@ document.addEventListener(
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/teams/my-teams",
+                    "/api/teams/my-teams",
                     {
                         method: "GET",
 

@@ -525,7 +525,7 @@ async function drawMembershipCard(doc, membership) {
 
     const verificationBaseUrl =
         process.env.PUBLIC_BASE_URL ||
-        "http://localhost:5000";
+        "";
 
     const verificationUrl =
         `${verificationBaseUrl}/verify.html?id=${encodeURIComponent(
