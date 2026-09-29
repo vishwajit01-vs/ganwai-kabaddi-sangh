@@ -22,7 +22,7 @@ async function sendEmail({ to, subject, html, attachments = [] }) {
         html,
         attachments
     });
-}
+} // 💡
 
 module.exports = {
     transporter,
