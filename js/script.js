@@ -83,28 +83,95 @@ if (membershipForm) {
 
         // ================= DOB VALIDATION =================
 
-        if (!dob.value) {
-            alert("Please select your date of birth.");
+        const dobValue =
+            dob.value.trim();
+
+        if (!dobValue) {
+
+            alert(
+                "Please enter your date of birth."
+            );
+
             dob.focus();
             return;
         }
 
+        // Expected format: DD-MM-YYYY
+
+        const dobPattern =
+            /^(\d{2})-(\d{2})-(\d{4})$/;
+
+        const dobMatch =
+            dobValue.match(dobPattern);
+
+        if (!dobMatch) {
+
+            alert(
+                "Please enter Date of Birth in DD-MM-YYYY format."
+            );
+
+            dob.focus();
+            return;
+        }
+
+        const day =
+            Number(dobMatch[1]);
+
+        const month =
+            Number(dobMatch[2]);
+
+        const year =
+            Number(dobMatch[3]);
+
+
+        // ================= CREATE DATE =================
+
         const selectedDOB =
-            new Date(dob.value);
+            new Date(
+                year,
+                month - 1,
+                day
+            );
+
+
+        // ================= VALID DATE CHECK =================
+
+        if (
+            selectedDOB.getFullYear() !== year ||
+            selectedDOB.getMonth() !== month - 1 ||
+            selectedDOB.getDate() !== day
+        ) {
+
+            alert(
+                "Please enter a valid date of birth."
+            );
+
+            dob.focus();
+            return;
+        }
+
+
+        // ================= TODAY =================
 
         const today =
             new Date();
 
-        today.setHours(0, 0, 0, 0);
+        today.setHours(
+            0,
+            0,
+            0,
+            0
+        );
 
-        if (isNaN(selectedDOB.getTime())) {
-            alert("Please enter a valid date of birth.");
-            dob.focus();
-            return;
-        }
+
+        // ================= FUTURE DATE CHECK =================
 
         if (selectedDOB > today) {
-            alert("Date of birth cannot be a future date.");
+
+            alert(
+                "Date of birth cannot be a future date."
+            );
+
             dob.focus();
             return;
         }
@@ -127,14 +194,28 @@ if (membershipForm) {
                 today.getDate() < selectedDOB.getDate()
             )
         ) {
+
             age--;
+
         }
 
         if (age < 5 || age > 100) {
-            alert("Please enter a valid date of birth.");
+
+            alert(
+                "Please enter a valid date of birth."
+            );
+
             dob.focus();
             return;
         }
+
+
+        // ================= BACKEND DATE FORMAT =================
+
+        // Convert DD-MM-YYYY → YYYY-MM-DD
+
+        const backendDOB =
+            `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
 
         // ================= MOBILE VALIDATION =================
@@ -294,7 +375,7 @@ if (membershipForm) {
 
         formData.append(
             "dob",
-            dob.value
+            backendDOB
         );
 
         formData.append(
@@ -1010,10 +1091,10 @@ document.addEventListener(
         if (!token) {
 
             myTeamsContainer.innerHTML = `
-                <div class="no-teams">
-                    Please login to view your team registrations.
-                </div>
-            `;
+<div class="no-teams">
+    Please login to view your team registrations.
+</div>
+`;
 
             return;
         }
@@ -1042,13 +1123,13 @@ document.addEventListener(
             if (!response.ok) {
 
                 myTeamsContainer.innerHTML = `
-                    <div class="team-error">
-                        ${escapeHtml(
-                    result.message ||
-                    "Unable to load your team registrations."
-                )}
-                    </div>
-                `;
+<div class="team-error">
+    ${escapeHtml(
+    result.message ||
+    "Unable to load your team registrations."
+)}
+</div>
+`;
 
                 return;
             }
@@ -1061,14 +1142,14 @@ document.addEventListener(
             if (teams.length === 0) {
 
                 myTeamsContainer.innerHTML = `
-                    <div class="no-teams">
-                        <strong>No team registration found.</strong>
-                        <br>
+<div class="no-teams">
+    <strong>No team registration found.</strong>
+<br>
                         <span>
                             You have not submitted any team registration yet.
                         </span>
-                    </div>
-                `;
+</div>
+    `;
 
                 return;
             }
@@ -1088,11 +1169,11 @@ document.addEventListener(
             );
 
             myTeamsContainer.innerHTML = `
-                <div class="team-error">
-                    Unable to connect to the server.
-                    Please make sure the backend server is running.
-                </div>
-            `;
+<div class="team-error">
+    Unable to connect to the server.
+    Please make sure the backend server is running.
+</div>
+`;
         }
 
     }
@@ -1166,139 +1247,139 @@ function createTeamCard(team) {
     const registrationId =
         team.registrationId
             ? `
-                <div class="registration-id">
-                    <span>Registration ID</span>
-                    <strong>
-                        ${escapeHtml(team.registrationId)}
-                    </strong>
-                </div>
-            `
+<div class="registration-id">
+    <span>Registration ID</span>
+<strong>
+    ${escapeHtml(team.registrationId)}
+</strong>
+</div>
+`
             : "";
 
 
     return `
-        <div class="team-card">
+<div class="team-card">
 
-            <div class="team-card-header">
+    <div class="team-card-header">
 
-                <div>
+    <div>
 
-                    <h3>
-                        ${escapeHtml(
-        team.teamName ||
-        "Unnamed Team"
-    )}
-                    </h3>
+    <h3>
+    ${escapeHtml(
+    team.teamName ||
+    "Unnamed Team"
+)}
+</h3>
 
-                    <p>
-                        ${escapeHtml(
-        tournamentName ||
-        "Tournament"
-    )}
-                    </p>
+<p>
+    ${escapeHtml(
+    tournamentName ||
+    "Tournament"
+)}
+</p>
 
-                </div>
+</div>
 
-                <span class="team-status ${registrationClass}">
+<span class="team-status ${registrationClass}">
                     ${escapeHtml(registrationStatus)}
                 </span>
 
-            </div>
+</div>
 
 
-            <div class="team-info-grid">
+<div class="team-info-grid">
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Captain
                     </span>
 
-                    <strong>
-                        ${escapeHtml(
-        team.captainName ||
-        "—"
-    )}
-                    </strong>
+        <strong>
+            ${escapeHtml(
+            team.captainName ||
+            "—"
+        )}
+        </strong>
 
-                </div>
+    </div>
 
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Players
                     </span>
 
-                    <strong>
-                        ${playerCount}
-                    </strong>
+        <strong>
+            ${playerCount}
+        </strong>
 
-                </div>
+    </div>
 
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Registration Fee
                     </span>
 
-                    <strong>
-                        ₹${team.registrationFee || 51}
-                    </strong>
+        <strong>
+            ₹${team.registrationFee || 51}
+        </strong>
 
-                </div>
+    </div>
 
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Payment Status
                     </span>
 
-                    <strong>
+        <strong>
 
                         <span class="team-status ${paymentClass}">
                             ${escapeHtml(paymentStatus)}
                         </span>
 
-                    </strong>
+        </strong>
 
-                </div>
+    </div>
 
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Submitted On
                     </span>
 
-                    <strong>
-                        ${submittedDate}
-                    </strong>
+        <strong>
+            ${submittedDate}
+        </strong>
 
-                </div>
+    </div>
 
 
-                <div class="team-info-item">
+    <div class="team-info-item">
 
                     <span>
                         Approval Date
                     </span>
 
-                    <strong>
-                        ${approvedDate}
-                    </strong>
+        <strong>
+            ${approvedDate}
+        </strong>
 
-                </div>
+    </div>
 
-            </div>
+</div>
 
 
-            ${registrationId}
+${registrationId}
 
-        </div>
-    `;
+</div>
+`;
 }
 
 
@@ -1339,3 +1420,4 @@ function escapeHtml(value) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
+

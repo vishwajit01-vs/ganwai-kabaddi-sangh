@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -24,11 +25,10 @@
             href="css/membership-form.css"
     >
 
+
 </head>
 
-
 <body>
-
 
 <!-- ================= HEADER ================= -->
 
@@ -108,11 +108,7 @@
                 id="accountActions"
         >
 
-            <!-- Guest -->
-
-            <div
-                    id="guestActions"
-            >
+            <div id="guestActions">
 
                 <a href="login.html">
                     Login
@@ -125,8 +121,6 @@
             </div>
 
 
-            <!-- Logged-in User -->
-
             <button
                     type="button"
                     id="userProfileButton"
@@ -134,22 +128,18 @@
                     style="display: none;"
             >
 
-                <span class="user-icon">
-                    👤
-                </span>
+            <span class="user-icon">
+                👤
+            </span>
 
             </button>
 
-
-            <!-- Overlay -->
 
             <div
                     class="account-overlay"
                     id="accountOverlay"
             ></div>
 
-
-            <!-- Account Sidebar -->
 
             <aside
                     class="account-sidebar"
@@ -194,9 +184,9 @@
 
                     <div class="account-detail-item">
 
-                        <span>
-                            Full Name
-                        </span>
+                    <span>
+                        Full Name
+                    </span>
 
                         <strong id="sidebarFullName">
                             —
@@ -207,9 +197,9 @@
 
                     <div class="account-detail-item">
 
-                        <span>
-                            Mobile Number
-                        </span>
+                    <span>
+                        Mobile Number
+                    </span>
 
                         <strong id="sidebarMobile">
                             —
@@ -220,9 +210,9 @@
 
                     <div class="account-detail-item">
 
-                        <span>
-                            Email Address
-                        </span>
+                    <span>
+                        Email Address
+                    </span>
 
                         <strong id="sidebarEmail">
                             —
@@ -250,15 +240,15 @@
         </div>
 
     </div>
+    ```
 
 </header>
-
 
 <!-- ================= MAIN ================= -->
 
 <main>
 
-
+    ```
     <!-- ================= FORM HERO ================= -->
 
     <section class="hero">
@@ -382,14 +372,19 @@
                             </label>
 
                             <input
-                                    type="date"
+                                    type="text"
                                     id="dob"
                                     name="dob"
+                                    placeholder="DD-MM-YYYY"
+                                    inputmode="numeric"
+                                    autocomplete="bday"
+                                    maxlength="10"
+                                    pattern="(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-[0-9]{4}"
                                     required
                             >
 
                             <small>
-                                Select your actual date of birth.
+                                Enter your date of birth in DD-MM-YYYY format.
                             </small>
 
                         </div>
@@ -549,8 +544,6 @@
                         <div class="payment-card">
 
 
-                            <!-- FEE -->
-
                             <div class="payment-summary">
 
                                 <p class="payment-fee">
@@ -576,8 +569,6 @@
 
 
 
-                            <!-- QR -->
-
                             <div class="payment-qr">
 
                                 <img
@@ -589,8 +580,6 @@
 
 
 
-                            <!-- INSTRUCTION -->
-
                             <p class="payment-instruction">
 
                                 Scan the QR code using your
@@ -600,8 +589,6 @@
                             </p>
 
 
-
-                            <!-- PAYMENT REFERENCE -->
 
                             <div class="form-group">
 
@@ -665,30 +652,163 @@
         </div>
 
     </section>
+    ```
 
 </main>
-
-
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
+    ```
     <div class="container">
 
         <p>
             © 2026 Ganwai Kabaddi Sangh
         </p>
 
-        <p>Digital Platform Developer: Vishwajit Chaubey</p>
+        <p>
+            Digital Platform Developer: Vishwajit Chaubey
+        </p>
+
     </div>
+    ```
 
 </footer>
 
-
-
 <script src="js/script.js"></script>
 
+<!-- ================= DOB VALIDATION ================= -->
+
+<script>
+
+    const dobInput = document.getElementById("dob");
+    const membershipForm = document.getElementById("membershipForm");
+
+
+    // Automatically add "-" while typing
+    dobInput.addEventListener("input", function () {
+
+        let value = this.value.replace(/\D/g, "");
+
+        if (value.length > 8) {
+            value = value.substring(0, 8);
+        }
+
+        if (value.length > 4) {
+
+            value =
+                value.substring(0, 2) +
+                "-" +
+                value.substring(2, 4) +
+                "-" +
+                value.substring(4);
+
+        } else if (value.length > 2) {
+
+            value =
+                value.substring(0, 2) +
+                "-" +
+                value.substring(2);
+
+        }
+
+        this.value = value;
+
+    });
+
+
+    // Validate DOB and convert to YYYY-MM-DD before submission
+    membershipForm.addEventListener("submit", function (event) {
+
+        const dob = dobInput.value.trim();
+
+        const dobPattern =
+            /^(\d{2})-(\d{2})-(\d{4})$/;
+
+        const match = dob.match(dobPattern);
+
+        if (!match) {
+
+            event.preventDefault();
+
+            alert(
+                "Please enter Date of Birth in DD-MM-YYYY format."
+            );
+
+            dobInput.focus();
+
+            return;
+
+        }
+
+
+        const day = Number(match[1]);
+        const month = Number(match[2]);
+        const year = Number(match[3]);
+
+
+        const date = new Date(
+            year,
+            month - 1,
+            day
+        );
+
+
+        // Check whether the entered date actually exists
+        if (
+            date.getFullYear() !== year ||
+            date.getMonth() !== month - 1 ||
+            date.getDate() !== day
+        ) {
+
+            event.preventDefault();
+
+            alert(
+                "Please enter a valid date of birth."
+            );
+
+            dobInput.focus();
+
+            return;
+
+        }
+
+
+        // Prevent future DOB
+        const today = new Date();
+
+        today.setHours(0, 0, 0, 0);
+
+        if (date > today) {
+
+            event.preventDefault();
+
+            alert(
+                "Date of birth cannot be in the future."
+            );
+
+            dobInput.focus();
+
+            return;
+
+        }
+
+
+        /*
+         * Convert DD-MM-YYYY to YYYY-MM-DD
+         * before sending it to the backend.
+         */
+        dobInput.value =
+            year +
+            "-" +
+            String(month).padStart(2, "0") +
+            "-" +
+            String(day).padStart(2, "0");
+
+    });
+
+</script>
 
 <!-- ================= LOGIN PROTECTION ================= -->
 
@@ -708,7 +828,6 @@
     }
 
 </script>
-
 
 </body>
 
