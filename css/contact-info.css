@@ -1474,3 +1474,19 @@ img {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(11, 35, 65, 0.15);
 }
+
+/* ==================================================
+   ADDITIONAL ADMINISTRATION CARDS
+================================================== */
+
+/* VICE PRESIDENT */
+.member-card.vice-president-card {
+    border-top-color: #3b82f6;
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+}
+
+/* FINANCE DIRECTOR */
+.member-card.finance-director-card {
+    border-top-color: #2e8b57;
+    background: linear-gradient(135deg, #f0faf5, #ffffff);
+}
