@@ -624,9 +624,29 @@ async function approveMembership(id) {
         }
 
 
-        alert(
-            "Membership approved successfully."
-        );
+        // ============================================
+        // EMAIL STATUS
+        // ============================================
+
+        if (data.emailSent === true) {
+
+            alert(
+                "Membership approved successfully.\n\n" +
+                "Membership PDF has been emailed successfully."
+            );
+
+        } else {
+
+            alert(
+                "Membership approved successfully.\n\n" +
+                "But the membership email could not be sent.\n\n" +
+                (
+                    data.emailError ||
+                    "Please check the email configuration."
+                )
+            );
+
+        }
 
 
         loadMemberships();
@@ -1096,6 +1116,33 @@ async function loadTeams() {
                 }
 
 
+                // ========================================
+                // TEAM PDF BUTTON
+                // ========================================
+
+                let teamPdfAction =
+                    "";
+
+
+                if (
+                    team.registrationStatus ===
+                    "Approved"
+                ) {
+
+                    teamPdfAction = `
+
+                        <button
+                            class="admin-btn"
+                            onclick="generateTeamPDF('${team._id}')"
+                        >
+                            PDF
+                        </button>
+
+                    `;
+
+                }
+
+
                 row.innerHTML = `
 
                     <td>
@@ -1181,6 +1228,8 @@ async function loadTeams() {
                         >
                             View
                         </button>
+
+                        ${teamPdfAction}
 
                     </td>
 
@@ -1357,17 +1406,54 @@ async function approveTeam(id) {
         }
 
 
-        alert(
-
+        let approvalMessage =
             "Team approved successfully.\n\n" +
-
             "Registration ID: " +
-
             (
                 data.team?.registrationId ||
                 "Generated"
-            )
+            );
 
+
+        if (
+            data.pdfGenerated === true &&
+            data.emailSent === true
+        ) {
+
+            approvalMessage +=
+                "\n\nPDF generated and email sent successfully.";
+
+        } else if (
+            data.pdfGenerated === true &&
+            data.emailSent === false
+        ) {
+
+            approvalMessage +=
+                "\n\nPDF generated successfully." +
+                "\nBut email could not be sent." +
+                (
+                    data.emailError
+                        ? `\n\n${data.emailError}`
+                        : ""
+                );
+
+        } else if (
+            data.pdfGenerated === false
+        ) {
+
+            approvalMessage +=
+                "\n\nPDF could not be generated." +
+                (
+                    data.pdfError
+                        ? `\n\n${data.pdfError}`
+                        : ""
+                );
+
+        }
+
+
+        alert(
+            approvalMessage
         );
 
 
@@ -1378,6 +1464,102 @@ async function approveTeam(id) {
 
         alert(
             error.message
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// TEAM PDF
+// =====================================================
+
+async function generateTeamPDF(id) {
+
+    try {
+
+        const response =
+            await fetch(
+                `/api/teams/${id}/pdf`,
+                {
+                    headers: {
+                        "Authorization":
+                            `Bearer ${adminToken}`
+                    }
+                }
+            );
+
+
+        if (!response.ok) {
+
+            const data =
+                await response
+                    .json()
+                    .catch(
+                        () => ({})
+                    );
+
+
+            throw new Error(
+                data.message ||
+                "Unable to generate Team Registration PDF."
+            );
+
+        }
+
+
+        const blob =
+            await response.blob();
+
+
+        const url =
+            window.URL.createObjectURL(
+                blob
+            );
+
+
+        const link =
+            document.createElement(
+                "a"
+            );
+
+
+        link.href =
+            url;
+
+
+        link.download =
+            "Team-Registration-Card.pdf";
+
+
+        document.body.appendChild(
+            link
+        );
+
+
+        link.click();
+
+
+        link.remove();
+
+
+        window.URL.revokeObjectURL(
+            url
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Team PDF Error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Team Registration PDF generation failed."
         );
 
     }
@@ -2593,6 +2775,7 @@ async function loadMatchTournaments() {
 // -----------------------------------------------------
 // CREATE MATCH
 // -----------------------------------------------------
+
 function ensureMatchNumberField() {
 
     const matchForm =
@@ -3063,6 +3246,7 @@ async function updateMatchScore(matchId, team, change) {
 
 }
 
+
 // -----------------------------------------------------
 // ADD LIVE MATCH EVENT
 // -----------------------------------------------------
@@ -3129,6 +3313,7 @@ async function addLiveMatchEvent(
     }
 
 }
+
 
 // -----------------------------------------------------
 // END LIVE MATCH
@@ -3546,145 +3731,143 @@ async function loadMatches() {
 
             </div>
 
-        
-        <div class="live-event-controls">
 
-    <h4>
-        MATCH EVENTS
-    </h4>
+            <div class="live-event-controls">
 
-    <div class="live-event-buttons">
+                <h4>
+                    MATCH EVENTS
+                </h4>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Raid Point',
-                '${escapeHtml(match.teamA)}',
-                1
-            )"
-        >
-            Raid +1 — ${escapeHtml(match.teamA)}
-        </button>
+                <div class="live-event-buttons">
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Raid Point',
-                '${escapeHtml(match.teamB)}',
-                1
-            )"
-        >
-            Raid +1 — ${escapeHtml(match.teamB)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Raid Point',
+                            '${escapeHtml(match.teamA)}',
+                            1
+                        )"
+                    >
+                        Raid +1 — ${escapeHtml(match.teamA)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Tackle Point',
-                '${escapeHtml(match.teamA)}',
-                1
-            )"
-        >
-            Tackle +1 — ${escapeHtml(match.teamA)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Raid Point',
+                            '${escapeHtml(match.teamB)}',
+                            1
+                        )"
+                    >
+                        Raid +1 — ${escapeHtml(match.teamB)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Tackle Point',
-                '${escapeHtml(match.teamB)}',
-                1
-            )"
-        >
-            Tackle +1 — ${escapeHtml(match.teamB)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Tackle Point',
+                            '${escapeHtml(match.teamA)}',
+                            1
+                        )"
+                    >
+                        Tackle +1 — ${escapeHtml(match.teamA)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Bonus',
-                '${escapeHtml(match.teamA)}',
-                1
-            )"
-        >
-            Bonus +1 — ${escapeHtml(match.teamA)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Tackle Point',
+                            '${escapeHtml(match.teamB)}',
+                            1
+                        )"
+                    >
+                        Tackle +1 — ${escapeHtml(match.teamB)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Bonus',
-                '${escapeHtml(match.teamB)}',
-                1
-            )"
-        >
-            Bonus +1 — ${escapeHtml(match.teamB)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Bonus',
+                            '${escapeHtml(match.teamA)}',
+                            1
+                        )"
+                    >
+                        Bonus +1 — ${escapeHtml(match.teamA)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'All-out',
-                '${escapeHtml(match.teamA)}',
-                2
-            )"
-        >
-            All-out +2 — ${escapeHtml(match.teamA)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Bonus',
+                            '${escapeHtml(match.teamB)}',
+                            1
+                        )"
+                    >
+                        Bonus +1 — ${escapeHtml(match.teamB)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'All-out',
-                '${escapeHtml(match.teamB)}',
-                2
-            )"
-        >
-            All-out +2 — ${escapeHtml(match.teamB)}
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'All-out',
+                            '${escapeHtml(match.teamA)}',
+                            2
+                        )"
+                    >
+                        All-out +2 — ${escapeHtml(match.teamA)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Timeout',
-                '',
-                0
-            )"
-        >
-            Timeout
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'All-out',
+                            '${escapeHtml(match.teamB)}',
+                            2
+                        )"
+                    >
+                        All-out +2 — ${escapeHtml(match.teamB)}
+                    </button>
 
-        <button
-            class="admin-btn"
-            onclick="addLiveMatchEvent(
-                '${match._id}',
-                'Half-time',
-                '',
-                0
-            )"
-        >
-            Half-time
-        </button>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Timeout',
+                            '',
+                            0
+                        )"
+                    >
+                        Timeout
+                    </button>
 
-    </div>
+                    <button
+                        class="admin-btn"
+                        onclick="addLiveMatchEvent(
+                            '${match._id}',
+                            'Half-time',
+                            '',
+                            0
+                        )"
+                    >
+                        Half-time
+                    </button>
 
-        </div>
+                </div>
+
+            </div>
 
 
-       
+            <!-- END MATCH -->
 
-        <!-- END MATCH -->
-
-        <div class="live-match-end">
+            <div class="live-match-end">
 
                 <button
                     class="live-end-btn"
@@ -3698,6 +3881,7 @@ async function loadMatches() {
         </div>
 
     `;
+
                 }
 
 

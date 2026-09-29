@@ -718,6 +718,219 @@ router.get(
 
 
 // =====================================================
+// GET: TEAM PDF
+// ADMIN ONLY
+// =====================================================
+
+router.get(
+    "/:id/pdf",
+    authMiddleware,
+    adminMiddleware,
+    async (req, res) => {
+
+        try {
+
+            const team =
+                await Team.findById(
+                    req.params.id
+                )
+                    .populate(
+                        "tournamentId",
+                        "tournamentName tournamentDate"
+                    );
+
+
+            if (!team) {
+
+                return res.status(404).json({
+
+                    message:
+                        "Team not found."
+
+                });
+
+            }
+
+
+            if (
+                team.registrationStatus !==
+                "Approved"
+            ) {
+
+                return res.status(400).json({
+
+                    message:
+                        "Team must be approved before generating the PDF."
+
+                });
+
+            }
+
+
+            if (!team.registrationId) {
+
+                return res.status(400).json({
+
+                    message:
+                        "Team registration ID is not available."
+
+                });
+
+            }
+
+
+            // =================================================
+            // PROJECT ROOT
+            // =================================================
+
+            const projectRoot =
+                path.join(
+                    __dirname,
+                    "..",
+                    ".."
+                );
+
+
+            // =================================================
+            // LOGO PATH
+            // =================================================
+
+            const logoPath =
+                path.join(
+                    projectRoot,
+                    "images",
+                    "logo.png"
+                );
+
+
+            if (
+                !fs.existsSync(
+                    logoPath
+                )
+            ) {
+
+                return res.status(500).json({
+
+                    message:
+                        "Sangh logo not found."
+
+                });
+
+            }
+
+
+            // =================================================
+            // PDF DIRECTORY
+            // =================================================
+
+            const pdfDirectory =
+                path.join(
+                    projectRoot,
+                    "backend",
+                    "uploads",
+                    "team-cards"
+                );
+
+
+            if (
+                !fs.existsSync(
+                    pdfDirectory
+                )
+            ) {
+
+                fs.mkdirSync(
+                    pdfDirectory,
+                    {
+                        recursive: true
+                    }
+                );
+
+            }
+
+
+            // =================================================
+            // PDF FILE
+            // =================================================
+
+            const pdfFileName =
+                `Team-Registration-Card-${team.registrationId}.pdf`;
+
+
+            const pdfPath =
+                path.join(
+                    pdfDirectory,
+                    pdfFileName
+                );
+
+
+            // =================================================
+            // GENERATE / REGENERATE PDF
+            // =================================================
+
+            await createTeamRegistrationCard({
+
+                outputPath:
+                pdfPath,
+
+                logoPath:
+                logoPath,
+
+                team:
+                team
+
+            });
+
+
+            console.log(
+                "Team PDF generated for download:",
+                pdfPath
+            );
+
+
+            // =================================================
+            // DOWNLOAD PDF
+            // =================================================
+
+            return res.download(
+                pdfPath,
+                pdfFileName,
+                (downloadError) => {
+
+                    if (downloadError) {
+
+                        console.error(
+                            "Team PDF download error:",
+                            downloadError
+                        );
+
+                    }
+
+                }
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Team PDF Route Error:",
+                error
+            );
+
+
+            return res.status(500).json({
+
+                message:
+                    "Unable to generate team registration PDF."
+
+            });
+
+        }
+
+    }
+);
+
+
+// =====================================================
 // GET: SINGLE TEAM
 // OWNER OR ADMIN
 // =====================================================
@@ -1022,6 +1235,23 @@ router.put(
 
 
             // =================================================
+            // STATUS FLAGS
+            // =================================================
+
+            let pdfGenerated =
+                false;
+
+            let emailSent =
+                false;
+
+            let pdfError =
+                null;
+
+            let emailError =
+                null;
+
+
+            // =================================================
             // APPROVAL EMAIL + PDF
             // =================================================
 
@@ -1115,17 +1345,25 @@ router.put(
                     });
 
 
+                    pdfGenerated =
+                        true;
+
+
                     console.log(
                         "Team registration card created:",
                         pdfPath
                     );
 
 
-                } catch (pdfError) {
+                } catch (error) {
+
+                    pdfError =
+                        error.message;
+
 
                     console.error(
                         "Team PDF creation error:",
-                        pdfError
+                        error
                     );
 
                 }
@@ -1478,6 +1716,7 @@ Ganwai Kabaddi Sangh © 2026
                     // PDF attachment
 
                     if (
+                        pdfGenerated &&
                         fs.existsSync(
                             pdfPath
                         )
@@ -1513,17 +1752,25 @@ Ganwai Kabaddi Sangh © 2026
                     });
 
 
+                    emailSent =
+                        true;
+
+
                     console.log(
                         "Team approval email sent to:",
                         team.email
                     );
 
 
-                } catch (emailError) {
+                } catch (error) {
+
+                    emailError =
+                        error.message;
+
 
                     console.error(
                         "Team approval email error:",
-                        emailError
+                        error
                     );
 
                 }
@@ -1539,6 +1786,14 @@ Ganwai Kabaddi Sangh © 2026
 
                 message:
                     `Team registration ${registrationStatus.toLowerCase()} successfully.`,
+
+                pdfGenerated,
+
+                emailSent,
+
+                pdfError,
+
+                emailError,
 
                 team
 
